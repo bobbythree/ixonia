@@ -21,7 +21,10 @@ function clickHandler(route, buttonType) {
       setBackground(route);
       createNarration(route);
       createButtons(route);
-      break;       
+      break;
+      case 'dialog':
+        setBackground(route);
+        createDialog(route);       
   }
 }
  
@@ -47,3 +50,21 @@ function createButtons(scene) {
     tempBtn.onclick = () => clickHandler(route, buttonType);
   }  
 }
+
+function createDialog(dialogName) {  
+  narrationBox.innerText = dialogs[dialogName].npcDialog;
+  const choices = dialogs[dialogName].playerDialog;
+  for (let i = 0; i < choices.length; i++) {
+    const tempBtn = document.createElement('button');
+    tempBtn.innerHTML = choices[i].text;
+    tempBtn.classList.add('playerDialog');    
+    dialogBox.appendChild(tempBtn);
+    tempBtn.onclick = () => {
+      dialogBox.innerHTML = '';
+      const route = choices[i].route;    
+      createDialog(route)
+    }
+  }  
+}  
+
+console.log(dialogs['ale'].playerDialog.route);
