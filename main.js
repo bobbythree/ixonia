@@ -70,5 +70,3 @@ function createDialog(dialogName) {
     }
   }  
 }  
-
-console.log(dialogs['ale'].playerDialog.route);

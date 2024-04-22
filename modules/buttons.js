@@ -1,7 +1,7 @@
 export const buttons = {
   title: {
     buttonOptions: [
-      {text: 'Play Game', type: 'navigation', route: 'ixonia'}      
+      {text: 'Start', type: 'navigation', route: 'ixonia'}      
     ]
   },
   ixonia: {
