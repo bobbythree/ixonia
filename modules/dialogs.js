@@ -57,7 +57,7 @@ export const ale = {
 }
 
 export const tofuPups = {
-  npcDialog: 'Ummm...right...uh,  Ok. well... what?',
+  npcDialog: 'BARKEEP: Ummm...right...uh,  Ok. well... what?',
   playerDialog: [
     {text: 'Um, just kidding, I\'ll have an ale.', route: 'ale'},
     {text: 'I said lemme get that Unicorn Blood!', route: 'unicornBlood'},
@@ -66,7 +66,7 @@ export const tofuPups = {
 }
 
 export const unicornBlood = {
-  npcDialog: 'Listen, you seem like a nice adventurer and all, but I don\'t think you\'re ready for Unicorn Blood. Tell ya what, come back when you\'ve proven yourself as a real hero and I\'ll give you a Unicorn Blood on the house!',
+  npcDialog: 'BARKEEP: Listen, you seem like a nice adventurer and all, but I don\'t think you\'re ready for Unicorn Blood. Tell ya what, come back when you\'ve proven yourself as a real hero and I\'ll give you a Unicorn Blood on the house!',
   playerDialog: [
     {text: 'Ok, I\'ll be BACK', route: 'bye'},
     {text: 'Ok, I\'ll BE back', route: 'bye'},
@@ -76,7 +76,7 @@ export const unicornBlood = {
 
 //tier 4
 export const buyAle = {
-  npcDialog: 'Thank you!',
+  npcDialog: 'BARKEEP: Thank you!',
   playerDialog: [
     {text: 'Thanks, bye', route: 'bye'},
     {text: 'Lemme get that Unicorn Blood!', route: 'unicornBlood'},
