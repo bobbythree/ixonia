@@ -23,6 +23,18 @@ body {
   justify-content: center;
 }
 
+#playerStats {
+  width: 600px;
+  height: auto;
+  border: 5px solid rgb(0, 0, 0);
+  border-bottom: none;
+  background-color: rgb(63, 63, 63);
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  color: rgb(226, 226, 226);
+}
+
 #screen {  
   width: 600px;
   height: 400px;
