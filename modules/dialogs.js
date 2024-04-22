@@ -50,14 +50,14 @@ export const beholderInfo2 = {
 export const ale = {
   npcDialog: 'BARKEEP: That\'ll be 1gp.',
   playerDialog: [
-    {text: 'Here\'s 1gp'},
+    {text: 'Here\'s 1gp', type: 'buy', item: 'ale', route: 'buyAle'},
     {text: 'Actually I changed my mind, Lemme get that Unicorn Blood', route: 'unicornBlood'},
     {text: 'I just remembered that my house is on fire...', route: 'bye'},
   ]
 }
 
 export const tofuPups = {
-  npcDialog: 'Ummm...right...uh,  Ok. well... what?',
+  npcDialog: 'BARKEEP: Ummm...right...uh,  Ok. well... what?',
   playerDialog: [
     {text: 'Um, just kidding, I\'ll have an ale.', route: 'ale'},
     {text: 'I said lemme get that Unicorn Blood!', route: 'unicornBlood'},
@@ -66,10 +66,20 @@ export const tofuPups = {
 }
 
 export const unicornBlood = {
-  npcDialog: 'Listen, you seem like a nice adventurer and all, but I don\'t think you\'re ready for Unicorn Blood. Tell ya what, come back when you\'ve proven yourself as a real hero and I\'ll give you a Unicorn Blood on the house!',
+  npcDialog: 'BARKEEP: Listen, you seem like a nice adventurer and all, but I don\'t think you\'re ready for Unicorn Blood. Tell ya what, come back when you\'ve proven yourself as a real hero and I\'ll give you a Unicorn Blood on the house!',
   playerDialog: [
     {text: 'Ok, I\'ll be BACK', route: 'bye'},
     {text: 'Ok, I\'ll BE back', route: 'bye'},
     {text: 'Ok, I\'LL be back', route: 'bye'},
+  ]
+}
+
+//tier 4
+export const buyAle = {
+  npcDialog: 'BARKEEP: Thank you!',
+  playerDialog: [
+    {text: 'Thanks, bye', route: 'bye'},
+    {text: 'Lemme get that Unicorn Blood!', route: 'unicornBlood'},
+    {text: 'What\'s this I hear about a beholder in town hall?', route: 'beholderInfo'},
   ]
 }

@@ -3,6 +3,8 @@ import { backgrounds } from './modules/backgrounds.js';
 import { narrations } from './modules/narrations.js'
 import { buttons } from './modules/buttons.js'
 import * as dialogs from './modules/dialogs.js'
+import * as items from './modules/items.js'
+
 
 //selectors
 const screen = document.getElementById('screen');
@@ -20,17 +22,17 @@ window.addEventListener('load', () => {
 });
 
 function startGame() {
-  setBackground('title');
-  createNarration('title');
-  createButtons('title');
   player.hp = 50;
-  player.gp = 100;
+  player.gp = 100;  
   player.weapons = ['Wooden Sword'];
   player.inv = [];
   hpText.innerText = player.hp;
   gpText.innerText = player.gp;
   weaponsText.innerText = player.weapons;
   invText.innerText = player.inv;
+  setBackground('title');
+  createNarration('title');
+  createButtons('title');   
 }
 
 function clickHandler(route, buttonType) {  
@@ -40,9 +42,10 @@ function clickHandler(route, buttonType) {
       createNarration(route);
       createButtons(route);
       break;
-      case 'dialog':
-        setBackground(route);
-        createDialog(route);       
+    case 'dialog':
+      setBackground(route);
+      createDialog(route);
+      break;       
   }
 }
  
@@ -83,8 +86,52 @@ function createDialog(dialogName) {
       dialogBox.innerHTML = '';
       const buttonType = choices[i].type;
       const route = choices[i].route;
-      if (buttonType == 'navigation') clickHandler(route, buttonType)    
-      else createDialog(route, buttonType)
+      const item = choices[i].item;
+      if (buttonType == 'navigation') {
+        clickHandler(route, buttonType)    
+      } else if(buttonType == 'buy') {
+        buyItem(item);
+        createDialog(route);        
+      } else createDialog(route);
     }
   }  
 }  
+
+function buyItem(itemName) {
+  const item = items[itemName].item;
+  const cost = items[itemName].buyPrice;
+  if (player.gp >= cost) {
+    player.gp -= cost;
+    player.gp = player.gp;
+    gpText.innerText = player.gp;
+    if (items[itemName].type = 'inv') {
+      player.inv.push(item);
+      invText.innerText = player.inv;
+      updateItemInv();      
+    } else if (items[itemName].type = 'weapon') {
+      player.weapons.push(item);
+      invText.innerText = player.inv;
+      updateWeaponInv();
+    }    
+  } else {
+    narrationBox.innerText = 'you do not have enough gold'
+  }  
+}
+
+
+function updateItemInv() {
+  let itemInv = player.inv;
+  let newItemInv = [...new Set(itemInv)]; //gets rid of dupes
+  player.inv = newItemInv;
+  invText.innerHTML = newItemInv; 
+
+}
+
+function updateWeaponInv() {
+  let weaponInv = player.weapons;
+  let newWeaponInv = [...new Set(weaponInv)]; //gets rid of dupes
+  player.inv = newWeaponInv;
+  invText.innerHTML = newWeaponInv; 
+}
+
+
