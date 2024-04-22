@@ -21,7 +21,10 @@ function clickHandler(route, buttonType) {
       setBackground(route);
       createNarration(route);
       createButtons(route);
-      break;       
+      break;
+      case 'dialog':
+        setBackground(route);
+        createDialog(route);       
   }
 }
  
@@ -38,12 +41,34 @@ function createNarration(scene) {
 function createButtons(scene) {
   const btns = buttons[scene].buttonOptions;
   for (let i = 0; i < btns.length; i++) {
-    const buttonType = buttons[scene].buttonOptions[i].type;
-    const route = buttons[scene].buttonOptions[i].route;    
     const tempBtn = document.createElement('button');
     tempBtn.innerText = btns[i].text;
     tempBtn.classList.add('btn');    
     narrationBox.appendChild(tempBtn);
-    tempBtn.onclick = () => clickHandler(route, buttonType);
+    tempBtn.onclick = () => {
+      const buttonType = buttons[scene].buttonOptions[i].type;
+      const route = buttons[scene].buttonOptions[i].route;    
+      clickHandler(route, buttonType);
+    }
   }  
 }
+
+function createDialog(dialogName) {  
+  narrationBox.innerText = dialogs[dialogName].npcDialog;
+  const choices = dialogs[dialogName].playerDialog;
+  for (let i = 0; i < choices.length; i++) {
+    const tempBtn = document.createElement('button');
+    tempBtn.innerHTML = choices[i].text;
+    tempBtn.classList.add('playerDialog');    
+    dialogBox.appendChild(tempBtn);
+    tempBtn.onclick = () => {
+      dialogBox.innerHTML = '';
+      const buttonType = choices[i].type;
+      const route = choices[i].route;
+      if (buttonType == 'navigation') clickHandler(route, buttonType)    
+      else createDialog(route, buttonType)
+    }
+  }  
+}  
+
+console.log(dialogs['ale'].playerDialog.route);

@@ -57,3 +57,28 @@ body {
   color: steelblue;
   transition: 0.5s;
 }
+
+#narration {
+  padding: 10px;
+}
+
+#dialog {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playerDialog {
+  border: none;
+  border-bottom: 1px solid rgb(139, 223, 124);
+  border-radius: 3px;
+  padding: 3px;
+  color: rgb(139, 223, 124);
+  background-color: rgb(63, 63, 63);
+}
+
+.playerDialog:hover {
+  border-bottom: 1px solid rgb(170, 236, 251);
+  color: rgb(170, 236, 251);
+  transition: 0.5s;
+}
