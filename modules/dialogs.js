@@ -50,7 +50,7 @@ export const beholderInfo2 = {
 export const ale = {
   npcDialog: 'BARKEEP: That\'ll be 1gp.',
   playerDialog: [
-    {text: 'Here\'s 1gp'},
+    {text: 'Here\'s 1gp', type: 'buy', item: 'ale', route: 'buyAle'},
     {text: 'Actually I changed my mind, Lemme get that Unicorn Blood', route: 'unicornBlood'},
     {text: 'I just remembered that my house is on fire...', route: 'bye'},
   ]
@@ -71,5 +71,15 @@ export const unicornBlood = {
     {text: 'Ok, I\'ll be BACK', route: 'bye'},
     {text: 'Ok, I\'ll BE back', route: 'bye'},
     {text: 'Ok, I\'LL be back', route: 'bye'},
+  ]
+}
+
+//tier 4
+export const buyAle = {
+  npcDialog: 'Thank you!',
+  playerDialog: [
+    {text: 'Thanks, bye', route: 'bye'},
+    {text: 'Lemme get that Unicorn Blood!', route: 'unicornBlood'},
+    {text: 'What\'s this I hear about a beholder in town hall?', route: 'beholderInfo'},
   ]
 }
