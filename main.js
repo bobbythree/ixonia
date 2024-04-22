@@ -41,13 +41,15 @@ function createNarration(scene) {
 function createButtons(scene) {
   const btns = buttons[scene].buttonOptions;
   for (let i = 0; i < btns.length; i++) {
-    const buttonType = buttons[scene].buttonOptions[i].type;
-    const route = buttons[scene].buttonOptions[i].route;    
     const tempBtn = document.createElement('button');
     tempBtn.innerText = btns[i].text;
     tempBtn.classList.add('btn');    
     narrationBox.appendChild(tempBtn);
-    tempBtn.onclick = () => clickHandler(route, buttonType);
+    tempBtn.onclick = () => {
+      const buttonType = buttons[scene].buttonOptions[i].type;
+      const route = buttons[scene].buttonOptions[i].route;    
+      clickHandler(route, buttonType);
+    }
   }  
 }
 
@@ -61,8 +63,10 @@ function createDialog(dialogName) {
     dialogBox.appendChild(tempBtn);
     tempBtn.onclick = () => {
       dialogBox.innerHTML = '';
-      const route = choices[i].route;    
-      createDialog(route)
+      const buttonType = choices[i].type;
+      const route = choices[i].route;
+      if (buttonType == 'navigation') clickHandler(route, buttonType)    
+      else createDialog(route, buttonType)
     }
   }  
 }  
