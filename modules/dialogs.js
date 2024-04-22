@@ -51,7 +51,7 @@ export const ale = {
   npcDialog: 'BARKEEP: That\'ll be 1gp.',
   playerDialog: [
     {text: 'Here\'s 1gp'},
-    {text: 'Actually I changed my mind, Lemme get that Unicorn Blood'},
+    {text: 'Actually I changed my mind, Lemme get that Unicorn Blood', route: 'unicornBlood'},
     {text: 'I just remembered that my house is on fire...', route: 'bye'},
   ]
 }
