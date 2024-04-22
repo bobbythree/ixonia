@@ -44,3 +44,16 @@ body {
 #narration {
   padding: 10px;
 }
+
+.btn {
+  padding: 5px 8px;
+  margin: 10px;
+  background-color: black;
+  color: lightblue;  
+}
+
+.btn:hover {
+  background-color: white;
+  color: steelblue;
+  transition: 0.5s;
+}
