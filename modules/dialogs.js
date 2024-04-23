@@ -83,3 +83,43 @@ export const buyAle = {
     {text: 'What\'s this I hear about a beholder in town hall?', route: 'beholderInfo'},
   ]
 }
+
+
+//Roger first dialog
+//tier 1
+export const roger = {
+  npcDialog: 'Patron: Hello.',
+  playerDialog: [
+    {text: 'Hel...HEY, don\'t I know you from somewhere?', route: 'dontIKnowYou'},
+    {text: 'The Quest Board over there said to ask you about quest details...', route: 'quests'},
+    {text: 'What the heck are ya wearing???', route: 'outfit'},
+  ]
+}
+
+//tier 2
+export const dontIKnowYou = {
+  npcDialog: 'ROGER: Hello.',
+  playerDialog: [
+    {text: 'Hel...HEY, don\'t I know you from somewhere?', route: 'somewhere'},
+    {text: 'The Quest Board over there said to ask you about quest details...', route: 'quests'},
+    {text: 'What the heck are ya wearing???', route: 'outfit'},
+  ]
+}
+
+export const quests = {
+  npcDialog: 'ROGER: Hello.',
+  playerDialog: [
+    {text: 'Hel...HEY, don\'t I know you from somewhere?', route: 'somewhere'},
+    {text: 'The Quest Board over there said to ask you about quest details...', route: 'quests'},
+    {text: 'What the heck are ya wearing???', route: 'outfit'},
+  ]
+}
+
+export const outfit = {
+  npcDialog: 'ROGER: Hello.',
+  playerDialog: [
+    {text: 'Hel...HEY, don\'t I know you from somewhere?', route: 'somewhere'},
+    {text: 'The Quest Board over there said to ask you about quest details...', route: 'quests'},
+    {text: 'What the heck are ya wearing???', route: 'outfit'},
+  ]
+}
