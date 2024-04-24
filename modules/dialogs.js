@@ -134,7 +134,8 @@ export const halflingDetails = {
   playerDialog: [
     {text: 'I accept this quest!', route: 'halflingQuest', type: 'navigation'},    
     {text: 'Let\'s hear about those Bullywug Craokers.', route: 'croakersDetails'},
-    {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'}
+    {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'},
+    {text: 'I just remembered there\'s and alien about to pop put of my chest...BYE!', route: 'tavern', type: 'navigation'}
   ]
 }
 
@@ -143,7 +144,8 @@ export const croakersDetails = {
   playerDialog: [
     {text: 'I accept this quest!', route: 'croakersQuest', type: 'navigation'},    
     {text: 'Tell me about the halfling quest.', route: 'halflingDetails'},
-    {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'}
+    {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'},
+    {text: 'I just remembered I don\'t want to go on any more of your Goonie adventures...BYE!', route: 'tavern', type: 'navigation'}
   ]
 }
 
@@ -152,6 +154,7 @@ export const beholderDetails = {
   playerDialog: [
     {text: 'I accept this quest!', route: 'beholderQuest', type: 'navigation'},    
     {text: 'Tell me about the halfling quest.', route: 'halflingDetails'},
-    {text: 'Let\'s hear about those Bullywug Craokers.', route: 'croakersDetails'}
+    {text: 'Let\'s hear about those Bullywug Craokers.', route: 'croakersDetails'},
+    {text: 'I just remembered that I gotta go wash my hair...BYE!', route: 'tavern', type: 'navigation'}
   ]
 }
