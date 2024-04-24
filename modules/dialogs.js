@@ -87,39 +87,71 @@ export const buyAle = {
 
 //Roger first dialog
 //tier 1
-export const roger = {
-  npcDialog: 'Patron: Hello.',
+export const patron = {
+  npcDialog: 'PATRON: Hello.',
   playerDialog: [
-    {text: 'Hel...HEY, don\'t I know you from somewhere?', route: 'dontIKnowYou'},
-    {text: 'The Quest Board over there said to ask you about quest details...', route: 'quests'},
-    {text: 'What the heck are ya wearing???', route: 'outfit'},
+    {text: 'Hell...HEY, don\'t I know you from somewhere?', route: 'dontIKnowYou'},
+    {text: 'Are you Roger?', route: 'roger'}    
   ]
 }
 
 //tier 2
 export const dontIKnowYou = {
-  npcDialog: 'ROGER: Hello.',
+  npcDialog: 'ROGER: Hmm...not sure. Name\'s Roger. Ever been to Pestulon? Hey are you the one that beat my high score on Astro Chicken?',
   playerDialog: [
-    {text: 'Hel...HEY, don\'t I know you from somewhere?', route: 'somewhere'},
-    {text: 'The Quest Board over there said to ask you about quest details...', route: 'quests'},
-    {text: 'What the heck are ya wearing???', route: 'outfit'},
+    {text: 'Umm, actually I was wanting to get details about the Quests on the board over there.', route: 'quests'}    
   ]
 }
 
-export const quests = {
-  npcDialog: 'ROGER: Hello.',
+export const roger = {
+  npcDialog: 'ROGER: Yep, that\'s me.',
   playerDialog: [
-    {text: 'Hel...HEY, don\'t I know you from somewhere?', route: 'somewhere'},
-    {text: 'The Quest Board over there said to ask you about quest details...', route: 'quests'},
+    {text: 'The quest board over there says to ask you for details.', route: 'quests'},    
     {text: 'What the heck are ya wearing???', route: 'outfit'},
   ]
 }
 
 export const outfit = {
-  npcDialog: 'ROGER: Hello.',
+  npcDialog: 'ROGER: What, this old thing? It\'s just my space-janitor uniform..',
   playerDialog: [
-    {text: 'Hel...HEY, don\'t I know you from somewhere?', route: 'somewhere'},
-    {text: 'The Quest Board over there said to ask you about quest details...', route: 'quests'},
-    {text: 'What the heck are ya wearing???', route: 'outfit'},
+    {text: 'Umm, actually I was wanting to get details about the Quests on the board over there.', route: 'quests'}    
+  ]
+}
+
+//tier 3
+export const quests = {
+  npcDialog: 'ROGER: Sure thing, which quest are you wondering about??',
+  playerDialog: [
+    {text: 'Tell me about the halfling quest.', route: 'halflingDetails'},    
+    {text: 'Let\'s hear about those Bullywug Craokers.', route: 'croakersDetails'},
+    {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'}
+  ]
+}
+
+//tier 4
+export const halflingDetails = {
+  npcDialog: 'ROGER: The Barkeep\'s daughter has gone missing. Last we heard, she was heading up to Aurochsmow for the day to look for work. She should\'ve been back days ago. You must go to Aurochsmow and find her. The reward for this quest is 500gp.',
+  playerDialog: [
+    {text: 'I accept this quest!', route: 'halflingQuest', type: 'navigation'},    
+    {text: 'Let\'s hear about those Bullywug Craokers.', route: 'croakersDetails'},
+    {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'}
+  ]
+}
+
+export const croakersDetails = {
+  npcDialog: 'ROGER: Just outside of town the Bullywug Croakers are blocking the main road. They ambush anyone who tries to cross into the marshes. Defeat them and recieve an exuisite longbow of immense power.',
+  playerDialog: [
+    {text: 'I accept this quest!', route: 'croakersQuest', type: 'navigation'},    
+    {text: 'Tell me about the halfling quest.', route: 'halflingDetails'},
+    {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'}
+  ]
+}
+
+export const beholderDetails = {
+  npcDialog: 'ROGER: A terrible Beholder has taken up residence in the town hall. He is a vicious beast who is far beyond the abilities of any of us. You must help us! Defeat the Beholder, be the hero of this town, and recieve 10,000gp.',
+  playerDialog: [
+    {text: 'I accept this quest!', route: 'beholderQuest', type: 'navigation'},    
+    {text: 'Tell me about the halfling quest.', route: 'halflingDetails'},
+    {text: 'Let\'s hear about those Bullywug Craokers.', route: 'croakersDetails'}
   ]
 }
