@@ -32,7 +32,8 @@ function startGame() {
   invText.innerText = player.inv;
   setBackground('title');
   createNarration('title');
-  createButtons('title');   
+  createButtons('title');
+  InventoryToButtons()    
 }
  
 function setBackground(scene) {
@@ -95,6 +96,10 @@ function createDialog(dialogName) {
           buyItem(item);
           createDialog(route);
           break;
+        case 'sell':
+          InventoryToButtons();
+          createDialog(route);
+          break;
         default:
         createDialog(route); 
       }      
@@ -123,6 +128,22 @@ function buyItem(itemName) {
   }  
 }
 
+function InventoryToButtons() {
+  player.weapons.forEach(e => {
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = e;
+    tempBtn.classList.add('btn');
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => sellItem(e);
+  })
+}
+
+function sellItem(itemName) {
+  const item = items[itemName].item;
+  const weaponIndex = player.weapons.indexOf(item);
+  player.weapons.splice(weaponIndex, 1);
+  updateWeaponInv();
+}
 
 function updateItemInv() {
   let itemInv = player.inv;
