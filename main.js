@@ -34,20 +34,6 @@ function startGame() {
   createNarration('title');
   createButtons('title');   
 }
-
-function clickHandler(route, buttonType) {  
-  switch(buttonType) {
-    case 'navigation':
-      setBackground(route);
-      createNarration(route);
-      createButtons(route);
-      break;
-    case 'dialog':
-      setBackground(route);
-      createDialog(route);
-      break;       
-  }
-}
  
 function setBackground(scene) {
   screen.style.backgroundImage = backgrounds[scene];
@@ -69,9 +55,23 @@ function createButtons(scene) {
     tempBtn.onclick = () => {
       const buttonType = buttons[scene].buttonOptions[i].type;
       const route = buttons[scene].buttonOptions[i].route;    
-      clickHandler(route, buttonType);
+      buttonHandler(route, buttonType);
     }
   }  
+}
+
+function buttonHandler(route, buttonType) {  
+  switch(buttonType) {
+    case 'navigation':
+      setBackground(route);
+      createNarration(route);
+      createButtons(route);
+      break;
+    case 'dialog':
+      setBackground(route);
+      createDialog(route);
+      break;       
+  }
 }
 
 function createDialog(dialogName) {  
@@ -89,7 +89,7 @@ function createDialog(dialogName) {
       const item = choices[i].item;
       switch(buttonType) {
         case 'navigation':
-          clickHandler(route, buttonType);
+          buttonHandler(route, buttonType);
           break;        
         case 'buy':
           buyItem(item);
@@ -100,19 +100,6 @@ function createDialog(dialogName) {
       }      
     }
   }  
-}
-
-switch(buttonType) {
-  case 'navigation':
-    clickHandler(route, buttonType);
-    break;
-  case 'dialog':
-    createDialog(route);
-    break;
-  case 'buy':
-    buyItem(item);
-    createDialog(route);
-    break;
 }
 
 function buyItem(itemName) {
