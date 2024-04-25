@@ -123,7 +123,7 @@ export const quests = {
   npcDialog: 'ROGER: Sure thing, which quest are you wondering about??',
   playerDialog: [
     {text: 'Tell me about the halfling quest.', route: 'halflingDetails'},    
-    {text: 'Let\'s hear about those Bullywug Craokers.', route: 'croakersDetails'},
+    {text: 'Let\'s hear about those Bullywug Croakers.', route: 'croakersDetails'},
     {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'}
   ]
 }
@@ -133,9 +133,9 @@ export const halflingDetails = {
   npcDialog: 'ROGER: The Barkeep\'s daughter has gone missing. Last we heard, she was heading up to Aurochsmow for the day to look for work. She should\'ve been back days ago. You must go to Aurochsmow and find her. The reward for this quest is 500gp.',
   playerDialog: [
     {text: 'I accept this quest!', route: 'halflingQuest', type: 'navigation'},    
-    {text: 'Let\'s hear about those Bullywug Craokers.', route: 'croakersDetails'},
+    {text: 'Let\'s hear about those Bullywug Croakers.', route: 'croakersDetails'},
     {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'},
-    {text: 'I just remembered there\'s and alien about to pop put of my chest...BYE!', route: 'tavern', type: 'navigation'}
+    {text: 'I just remembered there\'s an alien about to pop put of my chest...BYE!', route: 'tavern', type: 'navigation'}
   ]
 }
 
@@ -154,7 +154,7 @@ export const beholderDetails = {
   playerDialog: [
     {text: 'I accept this quest!', route: 'beholderQuest', type: 'navigation'},    
     {text: 'Tell me about the halfling quest.', route: 'halflingDetails'},
-    {text: 'Let\'s hear about those Bullywug Craokers.', route: 'croakersDetails'},
-    {text: 'I just remembered that I gotta go wash my hair...BYE!', route: 'tavern', type: 'navigation'}
+    {text: 'Let\'s hear about those Bullywug Croakers.', route: 'croakersDetails'},
+    {text: 'I just remembered that all phenomenon are empty of any intrinsic nature and thus are all inter-dependent and, well I just gotta go...BYE!', route: 'tavern', type: 'navigation'}
   ]
 }
