@@ -87,15 +87,33 @@ function createDialog(dialogName) {
       const buttonType = choices[i].type;
       const route = choices[i].route;
       const item = choices[i].item;
-      if (buttonType == 'navigation') {
-        clickHandler(route, buttonType)    
-      } else if(buttonType == 'buy') {
-        buyItem(item);
-        createDialog(route);        
-      } else createDialog(route);
+      switch(buttonType) {
+        case 'navigation':
+          clickHandler(route, buttonType);
+          break;        
+        case 'buy':
+          buyItem(item);
+          createDialog(route);
+          break;
+        default:
+        createDialog(route); 
+      }      
     }
   }  
-}  
+}
+
+switch(buttonType) {
+  case 'navigation':
+    clickHandler(route, buttonType);
+    break;
+  case 'dialog':
+    createDialog(route);
+    break;
+  case 'buy':
+    buyItem(item);
+    createDialog(route);
+    break;
+}
 
 function buyItem(itemName) {
   const item = items[itemName].item;
