@@ -14,4 +14,11 @@ export const buttons = {
       {text: 'Look at Quests', type: 'dialog', route: 'quests'}
     ]    
   },
+  halflingQuest: {
+    buttonOptions: [
+      {text: 'Go to Shoppe', type: 'dialog', route: 'barkeep'},
+      {text: 'Go to Inn', type: 'dialog', route: 'patron'},
+      {text: 'Back to Ixonia', type: 'navigation', route: 'ixonia'}
+    ]
+  }
 } 
