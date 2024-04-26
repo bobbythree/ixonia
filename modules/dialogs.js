@@ -158,3 +158,13 @@ export const beholderDetails = {
     {text: 'I just remembered that all phenomenon are empty of any intrinsic nature and thus are all inter-dependent and, well I just gotta go...BYE!', route: 'tavern', type: 'navigation'}
   ]
 }
+
+export const shoppe = {
+  npcDialog: 'SHOPPE CLERK: Hello and welcome to my Weapon Shoppe! How can I be of service?',
+  playerDialog: [
+    {text: 'I would like to buy a weapon', route: 'buyWeapons', type: 'navigation'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons'},
+    {text: 'I\'m looking for a missing halfling girl. Have you seen anyone like that come though here recently?', route: 'halfingInfo'},
+    {text: 'I just remembered that I told my grandma I would be home in time for dinner...BYE!', route: 'haflingQuest', type: 'navigation'}
+  ]
+}
