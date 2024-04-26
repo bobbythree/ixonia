@@ -32,7 +32,7 @@ function startGame() {
   invText.innerText = player.inv;
   setBackground('title');
   createNarration('title');
-  createButtons('title');   
+  createButtons('title');     
 }
  
 function setBackground(scene) {
@@ -95,6 +95,10 @@ function createDialog(dialogName) {
           buyItem(item);
           createDialog(route);
           break;
+        case 'sell':
+          InventoryToButtons();
+          createDialog(route);
+          break;
         default:
         createDialog(route); 
       }      
@@ -123,6 +127,30 @@ function buyItem(itemName) {
   }  
 }
 
+function InventoryToButtons() {
+  player.weapons.forEach(e => {
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = e;
+    tempBtn.classList.add('btn');
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => {
+      const str = e;
+      const saleItem = toCamelCase(str);
+      sellItem(saleItem);      
+    }
+  })
+}
+
+function sellItem(itemName) {
+  const item = items[itemName].item;
+  const price = items[itemName].sellPrice;
+  player.gp += price;
+  player.gp = player.gp;
+  gpText.innerText = player.gp;      
+  const weaponIndex = player.weapons.indexOf(item);
+  player.weapons.splice(weaponIndex, 1);
+  weaponsText.innerText = player.weapons;
+}
 
 function updateItemInv() {
   let itemInv = player.inv;
@@ -139,4 +167,8 @@ function updateWeaponInv() {
   invText.innerHTML = newWeaponInv; 
 }
 
-
+function toCamelCase(str) {
+  return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
+  return index === 0 ? word.toLowerCase() : word.toUpperCase();
+  }).replace(/\s+/g, '');
+}
