@@ -7,7 +7,7 @@ export const ale = {
 }
 
 export const woodenSword = {
-  item: 'Wooden Sword',
+  item: 'Wooden Sword ',
   buyPrice: 5,
   sellPrice: 1,
   minDamage: 1,
@@ -17,7 +17,7 @@ export const woodenSword = {
 }
 
 export const shortSword = {
-  item: 'Short Sword',
+  item: 'Short Sword ',
   buyPrice: 20,
   sellPrice: 5,
   minDamage: 1,
@@ -27,7 +27,7 @@ export const shortSword = {
 }
 
 export const broadSword= {
-  item: 'Broad Sword',
+  item: 'Broad Sword ',
   itemType: 'weapon',
   questItem: false,
   minDamage: 10,
@@ -37,7 +37,7 @@ export const broadSword= {
 }
 
 export const morningStar = {
-  item: 'Morning Star',
+  item: 'Morning Star ',
   itemType: 'weapon',
   questItem: false,
   minDamage: 5,
@@ -47,7 +47,7 @@ export const morningStar = {
 }
 
 export const warHammer = {
-  item: 'War Hammer',
+  item: 'War Hammer ',
   itemType: "weapon",
   questItem: false,
   minDamage: 10,

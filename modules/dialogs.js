@@ -193,8 +193,8 @@ export const halfingInfo = {
 export const swords = {
   npcDialog: 'I\'ve got a short sword (1-10 damage) and a broad sword (10-15 damage)',
   playerDialog: [
-    {text: 'I\'ll take the short sword', route: 'buyShortsword'},    
-    {text: 'I\'ll take the broad sword', route: 'buyBroadsword'},    
+    {text: 'I\'ll take the short sword (20gp)', route: 'buyWeapon', type: 'buy', item: 'shortSword'},    
+    {text: 'I\'ll take the broad sword (60gp)', route: 'buyWeapon', type: 'buy', item: 'broadSword'},    
     {text: 'Wait, what kind of blunt weapons did you say you had?', route: 'bluntWeapons'}
   ]
 }
@@ -202,16 +202,32 @@ export const swords = {
 export const bluntWeapons = {
   npcDialog: 'I\'ve got a morning star (5-10 damage) and a warhammer (10-20 damage)',
   playerDialog: [
-    {text: 'I\'ll take the morning star', route: 'buyMorningstar'},    
-    {text: 'I\'ll take the warhammer', route: 'buyWarhammer'},    
+    {text: 'I\'ll take the morning star (40gp)', route: 'buyWeapon', type: 'buy', item: 'morningStar'},    
+    {text: 'I\'ll take the warhammer (100gp)', route: 'buyWeapon', type: 'buy', item: 'warHammer'},    
     {text: 'Wait, what kind of swords did you say you had?', route: 'swords'}
+  ]
+}
+
+export const buyWeapon = {
+  npcDialog: 'Thank you!',
+  playerDialog: [
+    {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},
+    {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo'},
+    {text: 'I just remembered that I\'m trying to catch a bus to Palatine..BYE!', route: 'halflingQuest', type: 'navigation'}
   ]
 }
 
 export const sold = {
   npcDialog: 'Thank you!',
   playerDialog: [
-    {text: 'You\'re welcome!', route: 'shoppe'},    
-    {text: 'Your welcome!', route: 'shoppe'},
+    {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},
+    {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo'},
+    {text: 'I just remembered that I gotta go...BYE!', route: 'halflingQuest', type: 'navigation'}
   ]
+}
+
+export const notEnoughGold = {
+  npcDialog: 'You do not have enough gold!',  
 }
