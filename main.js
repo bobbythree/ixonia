@@ -96,8 +96,8 @@ function createDialog(dialogName) {
           createDialog(route);
           break;
         case 'sell':
+          createNarration(route);
           InventoryToButtons();
-          createDialog(route);
           break;
         default:
         createDialog(route); 
@@ -136,7 +136,8 @@ function InventoryToButtons() {
     tempBtn.onclick = () => {
       const str = e;
       const saleItem = toCamelCase(str);
-      sellItem(saleItem);      
+      sellItem(saleItem);
+      createDialog('sold');      
     }
   })
 }

@@ -159,12 +159,59 @@ export const beholderDetails = {
   ]
 }
 
+//shoppe tier 1
 export const shoppe = {
-  npcDialog: 'SHOPPE CLERK: Hello and welcome to my Weapon Shoppe! How can I be of service?',
+  npcDialog: 'SHOPPE OWNER: Hello and welcome to my Weapon Shoppe! How can I be of service?',
   playerDialog: [
-    {text: 'I would like to buy a weapon', route: 'buyWeapons', type: 'navigation'},    
-    {text: 'I would like to sell a weapon', route: 'sellWeapons'},
-    {text: 'I\'m looking for a missing halfling girl. Have you seen anyone like that come though here recently?', route: 'halfingInfo'},
-    {text: 'I just remembered that I told my grandma I would be home in time for dinner...BYE!', route: 'haflingQuest', type: 'navigation'}
+    {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},
+    {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo'},
+    {text: 'I just remembered that I told my grandma I would be home in time for dinner...BYE!', route: 'halflingQuest', type: 'navigation'}
+  ]
+}
+
+
+//tier 2
+export const buyWeapons = {
+  npcDialog: 'SHOPPE OWNER: OkeeDokee. Right now I\'ve got swords and I\'ve got blunt weapons.',
+  playerDialog: [
+    {text: 'What kind of swords have you got?', route: 'swords'},    
+    {text: 'What kind of blunt weapons have you got?', route: 'bluntWeapons'},    
+  ]
+}
+
+export const halfingInfo = {
+  npcDialog: 'I haven\'t seen any halflings come though my shop any time recently. Sorry friend.',
+  playerDialog: [
+    {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},    
+    {text: 'I just remembered that I forgot to remember what I forgot to remember to forget...BYE!', route: 'halflingQuest', type: 'navigation'}
+  ]
+}
+
+//tier 3
+export const swords = {
+  npcDialog: 'I\'ve got a short sword (1-10 damage) and a broad sword (10-15 damage)',
+  playerDialog: [
+    {text: 'I\'ll take the short sword', route: 'buyShortsword'},    
+    {text: 'I\'ll take the broad sword', route: 'buyBroadsword'},    
+    {text: 'Wait, what kind of blunt weapons did you say you had?', route: 'bluntWeapons'}
+  ]
+}
+
+export const bluntWeapons = {
+  npcDialog: 'I\'ve got a morning star (5-10 damage) and a warhammer (10-20 damage)',
+  playerDialog: [
+    {text: 'I\'ll take the morning star', route: 'buyMorningstar'},    
+    {text: 'I\'ll take the warhammer', route: 'buyWarhammer'},    
+    {text: 'Wait, what kind of swords did you say you had?', route: 'swords'}
+  ]
+}
+
+export const sold = {
+  npcDialog: 'Thank you!',
+  playerDialog: [
+    {text: 'You\'re welcome!', route: 'shoppe'},    
+    {text: 'Your welcome!', route: 'shoppe'},
   ]
 }
