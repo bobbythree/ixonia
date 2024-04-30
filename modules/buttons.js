@@ -20,5 +20,15 @@ export const buttons = {
       {text: 'Go to Inn', type: 'dialog', route: 'inn'},
       {text: 'Back to Ixonia', type: 'navigation', route: 'ixonia'}
     ]
+  },
+  innRoom: {
+    buttonOptions: [      
+      {text: 'Leave', type: 'navigation', route: 'halflingQuest'}
+    ]
+  },
+  farmDirections: {
+    buttonOptions: [      
+      {text: 'Head to the chicken farm!', type: 'navigation', route: 'farm'}
+    ]
   }
 } 

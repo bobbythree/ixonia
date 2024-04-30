@@ -112,7 +112,7 @@ function buyItem(itemName) {
   if (player.gp >= cost) {
     player.gp -= cost;
     player.gp = player.gp;
-    gpText.innerText = player.gp;
+    gpText.innerText = player.gp;    
     if (items[itemName].itemType === 'inv') {
       player.inv.push(item);      
       updateItemInv();      
@@ -122,7 +122,8 @@ function buyItem(itemName) {
     }    
   } else {
     notEnoughGold();
-  }  
+  }
+  if (item[itemName] == innRoom) sleep();  
 }
 
 function InventoryToButtons() {
@@ -174,4 +175,9 @@ function toCamelCase(str) {
 
 function notEnoughGold() {
   createDialog('notEnoughGold')
+}
+
+function sleep() {
+  player.hp = 50;
+  hpText.innerText = 50;
 }

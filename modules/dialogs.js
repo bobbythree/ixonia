@@ -228,6 +228,35 @@ export const sold = {
   ]
 }
 
+//inn
+//tier 1
+export const inn = {
+  npcDialog: 'Welcome to the Aurochsmaw Inn! 20gp per night. Would you like a room?',
+  playerDialog: [
+    {text: 'Yes, I\'d like a room please', route: 'innPay', type: 'buy', item: 'innRoom'},    
+    {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo2'},
+    {text: 'I just remembered that I gotta go...BYE!', route: 'halflingQuest', type: 'navigation'}
+  ]
+}
+
+export const halfingInfo2 = {
+  npcDialog: 'Come to think of it, yes, a halfling girl stayed here a couple nights ago. She went up to work at the chicken farm on the outskirts of town.',
+  playerDialog: [
+    {text: 'Excellent! Can you tell me how to get there?', route: 'farmDirections', type: 'navigation'}    
+  ]  
+}
+
+export const innPay = {
+  npcDialog: 'Thanks! Room 1408',
+  playerDialog: [
+    {text: 'Ok thanks, nite nite', route: 'innRoom', type: 'navigation'}    
+  ]
+}
+
+
+
 export const notEnoughGold = {
   npcDialog: 'You do not have enough gold!',  
 }
+
+

@@ -55,3 +55,10 @@ export const warHammer = {
   buyPrice: 100,
   sellPrice: 25
 } 
+export const innRoom = {
+  item: null,
+  itemType: null,
+  questItem: false,  
+  buyPrice: 20,
+  sellPrice: 0
+} 
