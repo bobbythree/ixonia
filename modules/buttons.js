@@ -14,4 +14,31 @@ export const buttons = {
       {text: 'Look at Quests', type: 'dialog', route: 'quests'}
     ]    
   },
+  halflingQuest: {
+    buttonOptions: [
+      {text: 'Go to Shoppe', type: 'dialog', route: 'shoppe'},
+      {text: 'Go to Inn', type: 'dialog', route: 'inn'},
+      {text: 'Back to Ixonia', type: 'navigation', route: 'ixonia'}
+    ]
+  },
+  innRoom: {
+    buttonOptions: [      
+      {text: 'Leave', type: 'navigation', route: 'halflingQuest'}
+    ]
+  },
+  farmDirections: {
+    buttonOptions: [      
+      {text: 'Head to the chicken farm!', type: 'navigation', route: 'farm'}
+    ]
+  },
+  farm: {
+    buttonOptions: [      
+      {text: 'Get a closer look', type: 'navigation', route: 'abyssal'}
+    ]
+  },
+  abyssal: {
+    buttonOptions: [      
+      {text: 'FIGHT!', type: 'navigation', route: ''}
+    ]
+  },
 } 

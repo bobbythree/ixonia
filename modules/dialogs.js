@@ -158,3 +158,105 @@ export const beholderDetails = {
     {text: 'I just remembered that all phenomenon are empty of any intrinsic nature and thus are all inter-dependent and, well I just gotta go...BYE!', route: 'tavern', type: 'navigation'}
   ]
 }
+
+//shoppe tier 1
+export const shoppe = {
+  npcDialog: 'SHOPPE OWNER: Hello and welcome to my Weapon Shoppe! How can I be of service?',
+  playerDialog: [
+    {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},
+    {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo'},
+    {text: 'I just remembered that I told my grandma I would be home in time for dinner...BYE!', route: 'halflingQuest', type: 'navigation'}
+  ]
+}
+
+
+//tier 2
+export const buyWeapons = {
+  npcDialog: 'SHOPPE OWNER: OkeeDokee. Right now I\'ve got swords and I\'ve got blunt weapons.',
+  playerDialog: [
+    {text: 'What kind of swords have you got?', route: 'swords'},    
+    {text: 'What kind of blunt weapons have you got?', route: 'bluntWeapons'},    
+  ]
+}
+
+export const halfingInfo = {
+  npcDialog: 'I haven\'t seen any halflings come though my shop any time recently. Sorry friend.',
+  playerDialog: [
+    {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},    
+    {text: 'I just remembered that I forgot to remember what I forgot to remember to forget...BYE!', route: 'halflingQuest', type: 'navigation'}
+  ]
+}
+
+//tier 3
+export const swords = {
+  npcDialog: 'I\'ve got a short sword (1-10 damage) and a broad sword (10-15 damage)',
+  playerDialog: [
+    {text: 'I\'ll take the short sword (20gp)', route: 'buyWeapon', type: 'buy', item: 'shortSword'},    
+    {text: 'I\'ll take the broad sword (60gp)', route: 'buyWeapon', type: 'buy', item: 'broadSword'},    
+    {text: 'Wait, what kind of blunt weapons did you say you had?', route: 'bluntWeapons'}
+  ]
+}
+
+export const bluntWeapons = {
+  npcDialog: 'I\'ve got a morning star (5-10 damage) and a warhammer (10-20 damage)',
+  playerDialog: [
+    {text: 'I\'ll take the morning star (40gp)', route: 'buyWeapon', type: 'buy', item: 'morningStar'},    
+    {text: 'I\'ll take the warhammer (100gp)', route: 'buyWeapon', type: 'buy', item: 'warHammer'},    
+    {text: 'Wait, what kind of swords did you say you had?', route: 'swords'}
+  ]
+}
+
+export const buyWeapon = {
+  npcDialog: 'Thank you!',
+  playerDialog: [
+    {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},
+    {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo'},
+    {text: 'I just remembered that I\'m trying to catch a bus to Palatine..BYE!', route: 'halflingQuest', type: 'navigation'}
+  ]
+}
+
+export const sold = {
+  npcDialog: 'Thank you!',
+  playerDialog: [
+    {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},
+    {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo'},
+    {text: 'I just remembered that I gotta go...BYE!', route: 'halflingQuest', type: 'navigation'}
+  ]
+}
+
+//inn
+//tier 1
+export const inn = {
+  npcDialog: 'Welcome to the Aurochsmaw Inn! 20gp per night. Would you like a room?',
+  playerDialog: [
+    {text: 'Yes, I\'d like a room please', route: 'innPay', type: 'buy', item: 'innRoom'},    
+    {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo2'},
+    {text: 'I just remembered that I gotta go...BYE!', route: 'halflingQuest', type: 'navigation'}
+  ]
+}
+
+export const halfingInfo2 = {
+  npcDialog: 'Come to think of it, yes, a halfling girl stayed here a couple nights ago. She went up to work at the chicken farm on the outskirts of town.',
+  playerDialog: [
+    {text: 'Excellent! Can you tell me how to get there?', route: 'farmDirections', type: 'navigation'}    
+  ]  
+}
+
+export const innPay = {
+  npcDialog: 'Thanks! Room 1408',
+  playerDialog: [
+    {text: 'Ok thanks, nite nite', route: 'innRoom', type: 'navigation'}    
+  ]
+}
+
+
+
+export const notEnoughGold = {
+  npcDialog: 'You do not have enough gold!',  
+}
+
+

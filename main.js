@@ -1,5 +1,5 @@
-import { player } from './modules/player.js';
-import { backgrounds } from './modules/backgrounds.js';
+import { player } from './modules/player.js'
+import { backgrounds } from './modules/backgrounds.js'
 import { narrations } from './modules/narrations.js'
 import { buttons } from './modules/buttons.js'
 import * as dialogs from './modules/dialogs.js'
@@ -92,12 +92,12 @@ function createDialog(dialogName) {
           buttonHandler(route, buttonType);
           break;        
         case 'buy':
-          buyItem(item);
           createDialog(route);
+          buyItem(item);
           break;
         case 'sell':
+          createNarration(route);
           InventoryToButtons();
-          createDialog(route);
           break;
         default:
         createDialog(route); 
@@ -112,19 +112,18 @@ function buyItem(itemName) {
   if (player.gp >= cost) {
     player.gp -= cost;
     player.gp = player.gp;
-    gpText.innerText = player.gp;
-    if (items[itemName].type = 'inv') {
-      player.inv.push(item);
-      invText.innerText = player.inv;
+    gpText.innerText = player.gp;    
+    if (items[itemName].itemType === 'inv') {
+      player.inv.push(item);      
       updateItemInv();      
-    } else if (items[itemName].type = 'weapon') {
-      player.weapons.push(item);
-      invText.innerText = player.inv;
+    } else if (items[itemName].itemType === 'weapon') {
+      player.weapons.push(item);      
       updateWeaponInv();
     }    
   } else {
-    narrationBox.innerText = 'you do not have enough gold'
-  }  
+    notEnoughGold();
+  }
+  if (item[itemName] == innRoom) sleep();  
 }
 
 function InventoryToButtons() {
@@ -136,7 +135,8 @@ function InventoryToButtons() {
     tempBtn.onclick = () => {
       const str = e;
       const saleItem = toCamelCase(str);
-      sellItem(saleItem);      
+      sellItem(saleItem);
+      createDialog('sold');      
     }
   })
 }
@@ -163,12 +163,21 @@ function updateItemInv() {
 function updateWeaponInv() {
   let weaponInv = player.weapons;
   let newWeaponInv = [...new Set(weaponInv)]; //gets rid of dupes
-  player.inv = newWeaponInv;
-  invText.innerHTML = newWeaponInv; 
+  player.weapons = newWeaponInv;
+  weaponsText.innerHTML = newWeaponInv; 
 }
 
 function toCamelCase(str) {
   return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
   return index === 0 ? word.toLowerCase() : word.toUpperCase();
   }).replace(/\s+/g, '');
+}
+
+function notEnoughGold() {
+  createDialog('notEnoughGold');
+}
+
+function sleep() {
+  player.hp = 50;
+  hpText.innerText = 50;
 }
