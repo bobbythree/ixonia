@@ -30,5 +30,15 @@ export const buttons = {
     buttonOptions: [      
       {text: 'Head to the chicken farm!', type: 'navigation', route: 'farm'}
     ]
-  }
+  },
+  farm: {
+    buttonOptions: [      
+      {text: 'Get a closer look', type: 'navigation', route: 'abyssal'}
+    ]
+  },
+  abyssal: {
+    buttonOptions: [      
+      {text: 'FIGHT!', type: 'navigation', route: ''}
+    ]
+  },
 } 

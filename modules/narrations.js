@@ -5,5 +5,7 @@ export const narrations = {
   halflingQuest: 'You arrive in the town of Aurochsmaw, a sleepy little farming community in the hills. You can see a Shoppe as well as an Inn.',
   sellWeapons: 'Which weapon do you want to sell?',
   innRoom: 'You awake fully rested',
-  farmDirections: 'You listen as they give detailed directions to the farm in true small town fashion - go up and over the hill and then when it starts to get more woodsey, turn left...and so on.'
+  farmDirections: 'You listen as they give detailed directions to the farm in true small town fashion - go up and over the hill and then when it starts to get more woodsey, turn left...and so on.',
+  farm: 'You follow the inn keeper\'s old-timey directions until you see the chicken farm in the distance. Something does not feel right...',
+  abyssal: 'As you approach the farm you see what the problem is. The chickens have turned into ABYSSALL CHICKENS!!! Prepare for battle.'
 }
