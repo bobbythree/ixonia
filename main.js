@@ -1,5 +1,5 @@
-import { player } from './modules/player.js';
-import { backgrounds } from './modules/backgrounds.js';
+import { player } from './modules/player.js'
+import { backgrounds } from './modules/backgrounds.js'
 import { narrations } from './modules/narrations.js'
 import { buttons } from './modules/buttons.js'
 import * as dialogs from './modules/dialogs.js'
@@ -174,7 +174,7 @@ function toCamelCase(str) {
 }
 
 function notEnoughGold() {
-  createDialog('notEnoughGold')
+  createDialog('notEnoughGold');
 }
 
 function sleep() {
