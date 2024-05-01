@@ -38,7 +38,7 @@ export const buttons = {
   },
   abyssal: {
     buttonOptions: [      
-      {text: 'FIGHT!', type: 'battle', foe: 'chicken', route: 'chickenBattle'}
+      {text: 'FIGHT!', type: 'battle', foe: 'chicken', route: 'battle'}
     ]
-  },
+  }
 } 

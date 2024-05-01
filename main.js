@@ -7,6 +7,7 @@ import * as items from './modules/items.js'
 import * as monsters from './modules/monsters.js'
 
 
+
 //selectors
 const screen = document.getElementById('screen');
 const text = document.getElementById('text');
@@ -16,6 +17,9 @@ const hpText = document.getElementById('hpText');
 const gpText = document.getElementById('gpText');
 const weaponsText = document.getElementById('weaponsText');
 const invText = document.getElementById('invText');
+const monsterStats = document.getElementById('monsterStats');
+const monsterHpText = document.getElementById('monsterHpText');
+
 
 //start game
 window.addEventListener('load', () => {
@@ -31,6 +35,7 @@ function startGame() {
   gpText.innerText = player.gp;
   weaponsText.innerText = player.weapons;
   invText.innerText = player.inv;
+  monsterStats.style.display = 'none';
   setBackground('title');
   createNarration('title');
   createButtons('title');     
@@ -192,6 +197,90 @@ function attack(currentWeapon, currentMonster) {
   const minDamage = items[currentWeapon].minDamage;
   const maxDamage = items[currentWeapon].maxDamage;
   let monsterHp = monsters[currentMonster].hp;
+  monsterStats.style.display = 'flex';
+  monsterHpText.innerText = monsterHp;
+
+  const accuracy = Math.random();
+  if (accuracy <= 2/3) {
+    monsterHp -= damage(minDamage, maxDamage);
+    monsters[currentMonster].hp = monsterHp;
+    monsterHpText.innerText = monsterHp;
+    narrationBox.innerText = `HIT! ${currentMonster} takes damage!`;
+    const br = document.createElement('br');
+    narrationBox.appendChild(br);
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Next';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    if (monsterHp <= 0) killMonster();
+    tempBtn.onclick = () => monsterAttack(currentMonster);
+  } else {
+    narrationBox.innerText = 'You attack and....MISS!';
+    const br = document.createElement('br');
+    narrationBox.appendChild(br);
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Next';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => monsterAttack(currentMonster);
+  }
+}
+
+function damage(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);  
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function monsterAttack(currentMonster) {
+  const minDamage = monsters[currentMonster].minDamage;
+  const maxDamage = monsters[currentMonster].maxDamage;
+  const accuracy = Math.random();
+  if (accuracy <= 2/3) {
+    player.hp -= damage(minDamage, maxDamage);
+    hpText.innerText = player.hp;
+    narrationBox.innerText = `the ${currentMonster} attacks....HIT! Player takes damage!`;
+    const br = document.createElement('br');
+    narrationBox.appendChild(br);
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Attack!';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    if (player.hp <= 0) killPlayer();
+    tempBtn.onclick = () => {
+      createNarration('battle');
+      battle(currentMonster); 
+    }
+  } else {
+    narrationBox.innerText = ` The ${currentMonster} attacks...MISS!`;
+    const br = document.createElement('br');
+    narrationBox.appendChild(br);
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Attack';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => {
+      createNarration('battle');
+      battle(currentMonster);
+    }
+  }
+}
+
+function killMonster() {
+  narrationBox.innerText = 'You killed the monster!!'
+}
+
+function killPlayer() {
+  setBackground('dead');
+  createNarration('dead');
+  const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Restart';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => {
+      startGame();
+    }
+  
 }
 
 function toCamelCase(str) {
