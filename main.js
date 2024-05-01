@@ -71,6 +71,9 @@ function buttonHandler(route, buttonType) {
       setBackground(route);
       createDialog(route);
       break;       
+    case 'battle':
+      
+      break;       
   }
 }
 
