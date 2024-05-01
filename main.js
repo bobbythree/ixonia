@@ -4,6 +4,7 @@ import { narrations } from './modules/narrations.js'
 import { buttons } from './modules/buttons.js'
 import * as dialogs from './modules/dialogs.js'
 import * as items from './modules/items.js'
+import * as monsters from './modules/monsters.js'
 
 
 //selectors
@@ -55,12 +56,13 @@ function createButtons(scene) {
     tempBtn.onclick = () => {
       const buttonType = buttons[scene].buttonOptions[i].type;
       const route = buttons[scene].buttonOptions[i].route;    
-      buttonHandler(route, buttonType);
+      const currentMonster = buttons[scene].buttonOptions[i].foe;    
+      buttonHandler(route, buttonType, currentMonster);
     }
   }  
 }
 
-function buttonHandler(route, buttonType) {  
+function buttonHandler(route, buttonType, currentMonster) {  
   switch(buttonType) {
     case 'navigation':
       setBackground(route);
@@ -72,7 +74,8 @@ function buttonHandler(route, buttonType) {
       createDialog(route);
       break;       
     case 'battle':
-      
+      createNarration(route);
+      battle(currentMonster);
       break;       
   }
 }
@@ -168,6 +171,27 @@ function updateWeaponInv() {
   let newWeaponInv = [...new Set(weaponInv)]; //gets rid of dupes
   player.weapons = newWeaponInv;
   weaponsText.innerHTML = newWeaponInv; 
+}
+
+function battle(currentMonster) {
+  //select weapon
+  player.weapons.forEach(e => {
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = e;
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => {
+      let str = e;
+      const currentWeapon = toCamelCase(str);
+      attack(currentWeapon, currentMonster);
+    }
+  })
+}
+
+function attack(currentWeapon, currentMonster) {
+  const minDamage = items[currentWeapon].minDamage;
+  const maxDamage = items[currentWeapon].maxDamage;
+  let monsterHp = monsters[currentMonster].hp;
 }
 
 function toCamelCase(str) {
