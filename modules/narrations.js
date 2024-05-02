@@ -9,5 +9,6 @@ export const narrations = {
   farm: 'You follow the inn keeper\'s old-timey directions until you see the chicken farm in the distance. Something does not feel right...',
   abyssal: 'As you approach the farm you see what the problem is. The chickens have turned into ABYSSALL CHICKENS!!! Prepare for battle.',
   battle: 'Choose weapon',
+  killChickens: 'You have defeated the Abyssal Chickens!',
   dead: 'Bruh, you died.'
 }

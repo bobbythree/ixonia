@@ -268,8 +268,9 @@ function monsterAttack(currentMonster) {
 
 function killMonster(currentMonster) {
   monsters[currentMonster].numberOfFoes--;
+  console.log(monsters[currentMonster].numberOfFoes);
   if (monsters[currentMonster].numberOfFoes === 0) {
-    winBattle();
+    winBattle(currentMonster);
   } else {
     narrationBox.innerText = `You killed the ${currentMonster}, but another one approaches!!`;
     const br = document.createElement('br');
@@ -287,8 +288,14 @@ function killMonster(currentMonster) {
   }
 }
 
-function winBattle() {
-  narrationBox.innerText = 'you won the battle!';
+function winBattle(currentMonster) {
+  if (currentMonster === 'chicken') {
+    monsterStats.style.display = 'none';
+    setBackground('farm');
+    createNarration('killChickens');
+    createButtons('killChickens');
+  }
+  
 } 
 
 function killPlayer() {
@@ -318,3 +325,4 @@ function sleep() {
   player.hp = 50;
   hpText.innerText = 50;
 }
+ 

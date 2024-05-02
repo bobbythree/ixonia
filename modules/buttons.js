@@ -40,5 +40,10 @@ export const buttons = {
     buttonOptions: [      
       {text: 'FIGHT!', type: 'battle', foe: 'chicken', route: 'battle'}
     ]
+  },
+  killChickens: {
+    buttonOptions: [      
+      {text: 'Explore barn', type: 'navigation', route: 'barn'}
+    ]
   }
 } 
