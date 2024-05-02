@@ -4,6 +4,8 @@ import { narrations } from './modules/narrations.js'
 import { buttons } from './modules/buttons.js'
 import * as dialogs from './modules/dialogs.js'
 import * as items from './modules/items.js'
+import * as monsters from './modules/monsters.js'
+
 
 
 //selectors
@@ -15,6 +17,9 @@ const hpText = document.getElementById('hpText');
 const gpText = document.getElementById('gpText');
 const weaponsText = document.getElementById('weaponsText');
 const invText = document.getElementById('invText');
+const monsterStats = document.getElementById('monsterStats');
+const monsterHpText = document.getElementById('monsterHpText');
+
 
 //start game
 window.addEventListener('load', () => {
@@ -30,6 +35,7 @@ function startGame() {
   gpText.innerText = player.gp;
   weaponsText.innerText = player.weapons;
   invText.innerText = player.inv;
+  monsterStats.style.display = 'none';
   setBackground('title');
   createNarration('title');
   createButtons('title');     
@@ -55,12 +61,13 @@ function createButtons(scene) {
     tempBtn.onclick = () => {
       const buttonType = buttons[scene].buttonOptions[i].type;
       const route = buttons[scene].buttonOptions[i].route;    
-      buttonHandler(route, buttonType);
+      const currentMonster = buttons[scene].buttonOptions[i].foe;    
+      buttonHandler(route, buttonType, currentMonster);
     }
   }  
 }
 
-function buttonHandler(route, buttonType) {  
+function buttonHandler(route, buttonType, currentMonster) {  
   switch(buttonType) {
     case 'navigation':
       setBackground(route);
@@ -70,6 +77,10 @@ function buttonHandler(route, buttonType) {
     case 'dialog':
       setBackground(route);
       createDialog(route);
+      break;       
+    case 'battle':
+      createNarration(route);
+      battle(currentMonster);
       break;       
   }
 }
@@ -123,7 +134,7 @@ function buyItem(itemName) {
   } else {
     notEnoughGold();
   }
-  if (item[itemName] == innRoom) sleep();  
+  if (item[itemName] == 'innRoom') sleep();  
 }
 
 function InventoryToButtons() {
@@ -167,6 +178,139 @@ function updateWeaponInv() {
   weaponsText.innerHTML = newWeaponInv; 
 }
 
+function battle(currentMonster) {
+  //select weapon
+  player.weapons.forEach(e => {
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = e;
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => {
+      let str = e;
+      const currentWeapon = toCamelCase(str);
+      attack(currentWeapon, currentMonster);
+    }
+  })
+}
+
+function attack(currentWeapon, currentMonster) {
+  const minDamage = items[currentWeapon].minDamage;
+  const maxDamage = items[currentWeapon].maxDamage;
+  let monsterHp = monsters[currentMonster].hp;
+  monsterStats.style.display = 'flex';
+  monsterHpText.innerText = monsterHp;
+
+  const accuracy = Math.random();
+  if (accuracy <= 2/3) {
+    monsterHp -= damage(minDamage, maxDamage);
+    monsters[currentMonster].hp = monsterHp;
+    monsterHpText.innerText = monsterHp;
+    narrationBox.innerText = `HIT! ${currentMonster} takes damage!`;
+    const br = document.createElement('br');
+    narrationBox.appendChild(br);
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Next';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    if (monsterHp <= 0) killMonster(currentMonster);
+    tempBtn.onclick = () => monsterAttack(currentMonster);
+  } else {
+    narrationBox.innerText = 'You attack and....MISS!';
+    const br = document.createElement('br');
+    narrationBox.appendChild(br);
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Next';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => monsterAttack(currentMonster);
+  }
+}
+
+function damage(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);  
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function monsterAttack(currentMonster) {
+  const minDamage = monsters[currentMonster].minDamage;
+  const maxDamage = monsters[currentMonster].maxDamage;
+  const accuracy = Math.random();
+  if (accuracy <= 2/3) {
+    player.hp -= damage(minDamage, maxDamage);
+    hpText.innerText = player.hp;
+    narrationBox.innerText = `the ${currentMonster} attacks....HIT! Player takes damage!`;
+    const br = document.createElement('br');
+    narrationBox.appendChild(br);
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Attack!';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    if (player.hp <= 0) killPlayer();
+    tempBtn.onclick = () => {
+      createNarration('battle');
+      battle(currentMonster); 
+    }
+  } else {
+    narrationBox.innerText = ` The ${currentMonster} attacks...MISS!`;
+    const br = document.createElement('br');
+    narrationBox.appendChild(br);
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Attack';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => {
+      createNarration('battle');
+      battle(currentMonster);
+    }
+  }
+}
+
+function killMonster(currentMonster) {
+  monsters[currentMonster].numberOfFoes--;
+  console.log(monsters[currentMonster].numberOfFoes);
+  if (monsters[currentMonster].numberOfFoes === 0) {
+    winBattle(currentMonster);
+  } else {
+    narrationBox.innerText = `You killed the ${currentMonster}, but another one approaches!!`;
+    const br = document.createElement('br');
+    narrationBox.appendChild(br);
+    monsters[currentMonster].hp = monsters[currentMonster].initHp;
+    monsterHpText.innerText = monsters[currentMonster].hp;
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Attack';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => {
+      createNarration('battle');
+      battle(currentMonster);
+    }
+  }
+}
+
+function winBattle(currentMonster) {
+  if (currentMonster === 'chicken') {
+    monsterStats.style.display = 'none';
+    setBackground('farm');
+    createNarration('killChickens');
+    createButtons('killChickens');
+  }
+  
+} 
+
+function killPlayer() {
+  setBackground('dead');
+  createNarration('dead');
+  const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Restart';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => {
+      startGame();
+    }
+  
+}
+
 function toCamelCase(str) {
   return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
   return index === 0 ? word.toLowerCase() : word.toUpperCase();
@@ -181,3 +325,4 @@ function sleep() {
   player.hp = 50;
   hpText.innerText = 50;
 }
+ 

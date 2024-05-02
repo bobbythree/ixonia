@@ -9,5 +9,6 @@ export const backgrounds = {
   inn: "url('/images/inn.png')",
   innRoom: "url('/images/inn-room.png')",
   farm: "url('/images/farm.png')",
-  abyssal: "url('/images/abyssal.png')"
+  abyssal: "url('/images/abyssal.png')",
+  dead: "url('/images/dead.png')"
 }

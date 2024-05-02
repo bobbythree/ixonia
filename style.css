@@ -35,6 +35,16 @@ body {
   color: rgb(226, 226, 226);
 }
 
+#monsterStats {
+  border: 5px solid rgb(0, 0, 0);
+  border-bottom: none;
+  width: 600px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: rgb(202, 0, 0);  
+}
+
 #screen {  
   width: 600px;
   height: 400px;
