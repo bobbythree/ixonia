@@ -253,6 +253,15 @@ export const innPay = {
   ]
 }
 
+export const hayloft = {
+  npcDialog: '',
+  playerDialog: [
+    {text: '...hellooooo?...', route: 'halfingMain'},
+    {text: 'Umm...Hayyyy..', route: 'halflingFunny'},
+    {text: 'Come out from there at once!', route: 'halflingScared'}
+  ]
+}
+
 
 
 export const notEnoughGold = {

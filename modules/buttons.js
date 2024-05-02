@@ -45,5 +45,11 @@ export const buttons = {
     buttonOptions: [      
       {text: 'Explore barn', type: 'navigation', route: 'barn'}
     ]
-  }
+  },
+  barn: {
+    buttonOptions: [      
+      {text: 'Explore hayloft', type: 'dialog', route: 'hayloft'}
+    ]
+  },
+  
 } 

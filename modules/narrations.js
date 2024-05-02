@@ -10,5 +10,7 @@ export const narrations = {
   abyssal: 'As you approach the farm you see what the problem is. The chickens have turned into ABYSSALL CHICKENS!!! Prepare for battle.',
   battle: 'Choose weapon',
   killChickens: 'You have defeated the Abyssal Chickens!',
+  barn: '"You make your way past the recently deceased Abyssal Chickens and toward the barn. These chickens really wreaked havoc on this farm and it appears that those who stood and fought them were not so lucky as you. As you cautiously enter the barn you hear muffled noises up in the hayloft.',
+  hayloft: 'You climb up the old wood ladder into the hayloft. The pile of hay in the corner is moving and as you approach, hoping dearly it isn\'t more chickens, the muffled noises become recognizable as human in nature. It sounds like whimpering.',
   dead: 'Bruh, you died.'
 }
