@@ -134,7 +134,7 @@ function buyItem(itemName) {
   } else {
     notEnoughGold();
   }
-  if (item[itemName] == innRoom) sleep();  
+  if (item[itemName] == 'innRoom') sleep();  
 }
 
 function InventoryToButtons() {
@@ -212,7 +212,7 @@ function attack(currentWeapon, currentMonster) {
     tempBtn.innerText = 'Next';
     tempBtn.className = 'btn';
     narrationBox.appendChild(tempBtn);
-    if (monsterHp <= 0) killMonster();
+    if (monsterHp <= 0) killMonster(currentMonster);
     tempBtn.onclick = () => monsterAttack(currentMonster);
   } else {
     narrationBox.innerText = 'You attack and....MISS!';
@@ -266,9 +266,30 @@ function monsterAttack(currentMonster) {
   }
 }
 
-function killMonster() {
-  narrationBox.innerText = 'You killed the monster!!'
+function killMonster(currentMonster) {
+  monsters[currentMonster].numberOfFoes--;
+  if (monsters[currentMonster].numberOfFoes === 0) {
+    winBattle();
+  } else {
+    narrationBox.innerText = `You killed the ${currentMonster}, but another one approaches!!`;
+    const br = document.createElement('br');
+    narrationBox.appendChild(br);
+    monsters[currentMonster].hp = monsters[currentMonster].initHp;
+    monsterHpText.innerText = monsters[currentMonster].hp;
+    const tempBtn = document.createElement('button');
+    tempBtn.innerText = 'Attack';
+    tempBtn.className = 'btn';
+    narrationBox.appendChild(tempBtn);
+    tempBtn.onclick = () => {
+      createNarration('battle');
+      battle(currentMonster);
+    }
+  }
 }
+
+function winBattle() {
+  narrationBox.innerText = 'you won the battle!';
+} 
 
 function killPlayer() {
   setBackground('dead');
