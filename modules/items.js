@@ -61,4 +61,11 @@ export const innRoom = {
   questItem: false,  
   buyPrice: 20,
   sellPrice: 0
-} 
+}
+
+export const unicornBlood = {
+  item: 'Unicorn Blood',
+  itemType: 'inv',
+  questItem: true,
+  buyPrice: 0  
+}

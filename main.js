@@ -62,12 +62,13 @@ function createButtons(scene) {
       const buttonType = buttons[scene].buttonOptions[i].type;
       const route = buttons[scene].buttonOptions[i].route;    
       const currentMonster = buttons[scene].buttonOptions[i].foe;    
-      buttonHandler(route, buttonType, currentMonster);
+      const questName = buttons[scene].buttonOptions[i].quest;    
+      buttonHandler(route, buttonType, currentMonster, questName);
     }
   }  
 }
 
-function buttonHandler(route, buttonType, currentMonster) {  
+function buttonHandler(route, buttonType, currentMonster, questName) {  
   switch(buttonType) {
     case 'navigation':
       setBackground(route);
@@ -81,6 +82,12 @@ function buttonHandler(route, buttonType, currentMonster) {
     case 'battle':
       createNarration(route);
       battle(currentMonster);
+      break;       
+    case 'reward':
+      getReward(questName);
+      setBackground(route);
+      createNarration(route);
+      createButtons(route);
       break;       
   }
 }
@@ -309,6 +316,15 @@ function killPlayer() {
       startGame();
     }
   
+}
+
+function getReward(questName) {
+  if (questName === 'halfling') {
+    buyItem('unicornBlood');
+    player.gp += 500;
+    gpText.innerText = player.gp;
+    player.killedChickens = true;    
+  }
 }
 
 function toCamelCase(str) {

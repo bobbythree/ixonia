@@ -51,5 +51,10 @@ export const buttons = {
       {text: 'Explore hayloft', type: 'dialog', route: 'hayloft'}
     ]
   },
+  barkeep2: {
+    buttonOptions: [      
+      {text: 'accept rewards', type: 'reward', quest: 'halfling', route: 'ixonia'}
+    ]
+  },
   
 } 
