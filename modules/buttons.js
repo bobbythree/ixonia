@@ -5,7 +5,12 @@ export const buttons = {
     ]
   },
   ixonia: {
-    buttonOptions: [{text: 'Enter Tavern', type: 'navigation', route: 'tavern'}]    
+    buttonOptions: [
+      {text: 'Enter Tavern', type: 'navigation', route: 'tavern'},
+    ],
+    buttonoptions2: [
+      {text: 'To Aurochsmaw', type: 'navigation', route: 'halflingQuest'}
+    ],    
   },
   tavern: {
     buttonOptions: [
@@ -49,6 +54,11 @@ export const buttons = {
   barn: {
     buttonOptions: [      
       {text: 'Explore hayloft', type: 'dialog', route: 'hayloft'}
+    ]
+  },
+  barkeep2: {
+    buttonOptions: [      
+      {text: 'accept rewards', type: 'reward', quest: 'halfling', route: 'ixonia'}
     ]
   },
   

@@ -46,13 +46,18 @@ function setBackground(scene) {
 }
 
 function createNarration(scene) {
-  narrationBox.innerText = narrations[scene];
+  if (player.killedChickens === true) {
+    narrationBox.innerText = narrations[scene][1];
+  } else {
+    narrationBox.innerText = narrations[scene][0];
+  } 
   const br = document.createElement('br');
   narrationBox.appendChild(br);
 }
 
 function createButtons(scene) {
   const btns = buttons[scene].buttonOptions;
+  const btns2 = buttons[scene].buttonOptions2;
   for (let i = 0; i < btns.length; i++) {
     const tempBtn = document.createElement('button');
     tempBtn.innerText = btns[i].text;
@@ -62,12 +67,13 @@ function createButtons(scene) {
       const buttonType = buttons[scene].buttonOptions[i].type;
       const route = buttons[scene].buttonOptions[i].route;    
       const currentMonster = buttons[scene].buttonOptions[i].foe;    
-      buttonHandler(route, buttonType, currentMonster);
+      const questName = buttons[scene].buttonOptions[i].quest;    
+      buttonHandler(route, buttonType, currentMonster, questName);
     }
   }  
 }
 
-function buttonHandler(route, buttonType, currentMonster) {  
+function buttonHandler(route, buttonType, currentMonster, questName) {  
   switch(buttonType) {
     case 'navigation':
       setBackground(route);
@@ -81,6 +87,12 @@ function buttonHandler(route, buttonType, currentMonster) {
     case 'battle':
       createNarration(route);
       battle(currentMonster);
+      break;       
+    case 'reward':
+      getReward(questName);
+      setBackground(route);
+      createNarration(route);
+      createButtons(route);
       break;       
   }
 }
@@ -309,6 +321,15 @@ function killPlayer() {
       startGame();
     }
   
+}
+
+function getReward(questName) {
+  if (questName === 'halfling') {
+    buyItem('unicornBlood');
+    player.gp += 500;
+    gpText.innerText = player.gp;
+    player.killedChickens = true;    
+  }
 }
 
 function toCamelCase(str) {

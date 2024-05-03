@@ -256,9 +256,46 @@ export const innPay = {
 export const hayloft = {
   npcDialog: '',
   playerDialog: [
-    {text: '...hellooooo?...', route: 'halfingMain'},
+    {text: '...hellooooo?...', route: 'halflingMain'},
     {text: 'Umm...Hayyyy..', route: 'halflingFunny'},
     {text: 'Come out from there at once!', route: 'halflingScared'}
+  ]
+}
+
+
+export const halflingMain = {
+  npcDialog: 'Out of the pile of hay appears a halfling girl!!',
+  playerDialog: [
+    {text: 'Are you the missing halfling girl? The barkeeps daughter?', route: 'halflingMain2'}
+  ]
+}
+
+export const halflingFunny = {
+  npcDialog: 'PILE OF HAY: Now is not the time for puns!',
+  playerDialog: [
+    {text: 'My apologies, when I\'m uncomfortable my only coping skill seems to be dad humor. Please come out from there, no more puns I promise.', route: 'halflingMain'},
+    
+  ]
+}
+
+export const halflingScared = {
+  npcDialog: 'PILE OF HAY: Go awayyyy!!!',
+  playerDialog: [
+    {text: 'I didn\'t mean to shout...please come out, it\'s safe now.', route: 'halflingMain'}    
+  ]
+}
+
+export const halflingMain2 = {
+  npcDialog: 'HALFLING GIRL: Yes, I came up here for work and suddenly all the chickens turned into these dusgusting creatures and killed off all the farmers. I\'ve been hiding in this barn ever since. Thank goodness you\'ve come. Are the chickens gone?',
+  playerDialog: [
+    {text: 'Yes, I have defeated the chickens. Let\'s get you back to Ixonia and to your mother.', route: 'halflingMain3'}    
+  ]
+}
+
+export const halflingMain3 = {
+  npcDialog: 'HALFLING GIRL: Yes. Thank you. Let\'s go!!',
+  playerDialog: [
+    {text: 'Follow me!', route: 'barkeep2', type: 'navigation'}    
   ]
 }
 
