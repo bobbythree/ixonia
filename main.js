@@ -46,13 +46,18 @@ function setBackground(scene) {
 }
 
 function createNarration(scene) {
-  narrationBox.innerText = narrations[scene];
+  if (player.killedChickens === true) {
+    narrationBox.innerText = narrations[scene][1];
+  } else {
+    narrationBox.innerText = narrations[scene][0];
+  } 
   const br = document.createElement('br');
   narrationBox.appendChild(br);
 }
 
 function createButtons(scene) {
   const btns = buttons[scene].buttonOptions;
+  const btns2 = buttons[scene].buttonOptions2;
   for (let i = 0; i < btns.length; i++) {
     const tempBtn = document.createElement('button');
     tempBtn.innerText = btns[i].text;

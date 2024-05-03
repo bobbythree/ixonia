@@ -5,7 +5,12 @@ export const buttons = {
     ]
   },
   ixonia: {
-    buttonOptions: [{text: 'Enter Tavern', type: 'navigation', route: 'tavern'}]    
+    buttonOptions: [
+      {text: 'Enter Tavern', type: 'navigation', route: 'tavern'},
+    ],
+    buttonoptions2: [
+      {text: 'To Aurochsmaw', type: 'navigation', route: 'halflingQuest'}
+    ],    
   },
   tavern: {
     buttonOptions: [
