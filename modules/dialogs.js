@@ -89,9 +89,14 @@ export const buyAle = {
 //tier 1
 export const patron = {
   npcDialog: 'PATRON: Hello.',
+  npcDialog2: 'Great job rescuing Esmee\'s daughter! Ready for another quest?', 
   playerDialog: [
     {text: 'Hell...HEY, don\'t I know you from somewhere?', route: 'dontIKnowYou'},
     {text: 'Are you Roger?', route: 'roger'}    
+  ],
+  playerDialog2: [
+    {text: 'Let\'s hear about those Bullywug Croakers.', route: 'croakersDetails'},
+    {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'}
   ]
 }
 
