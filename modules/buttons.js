@@ -21,7 +21,8 @@ export const buttons = {
     ],
     buttonOptions2: [
       {text: 'Talk to Esmee', type: 'dialog', route: 'barkeep'},
-      {text: 'Talk to Roger', type: 'dialog', route: 'patron'}
+      {text: 'Talk to Roger', type: 'dialog', route: 'patron'},
+      {text: 'Leave Tavern', type: 'navigation', route: 'ixonia'}
     ]    
   },
   halflingQuest: {

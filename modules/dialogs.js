@@ -6,6 +6,10 @@ export const barkeep = {
     {text: 'What do you have to drink in this place?', route: 'drinks'},
     {text: 'What\'s this I hear about a beholder in town hall?', route: 'beholderInfo'},
     {text: 'I just remembered I left my oven on...', route: 'bye'}
+  ], 
+  npcDialog2: 'BARKEEP: Thank you again for saving my daughter!',
+  playerDialog2: [
+    {text: 'All in a day\'s work! BYE!', type: 'navigation', route: 'tavern'}    
   ] 
 }
 
@@ -89,7 +93,7 @@ export const buyAle = {
 //tier 1
 export const patron = {
   npcDialog: 'PATRON: Hello.',
-  npcDialog2: 'Great job rescuing Esmee\'s daughter! Ready for another quest?', 
+  npcDialog2: 'ROGER: Great job rescuing Esmee\'s daughter! Ready for another quest?', 
   playerDialog: [
     {text: 'Hell...HEY, don\'t I know you from somewhere?', route: 'dontIKnowYou'},
     {text: 'Are you Roger?', route: 'roger'}    
@@ -146,11 +150,17 @@ export const halflingDetails = {
 
 export const croakersDetails = {
   npcDialog: 'ROGER: Just outside of town the Bullywug Croakers are blocking the main road. They ambush anyone who tries to cross into the marshes. Defeat them and recieve an exuisite longbow of immense power.',
+  npcDialog2: 'ROGER: Just outside of town the Bullywug Croakers are blocking the main road. They ambush anyone who tries to cross into the marshes. Defeat them and recieve an exuisite longbow of immense power.',
   playerDialog: [
     {text: 'I accept this quest!', route: 'croakersQuest', type: 'navigation'},    
     {text: 'Tell me about the halfling quest.', route: 'halflingDetails'},
     {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'},
     {text: 'I just remembered I don\'t want to go on any more of your Goonie adventures...BYE!', route: 'tavern', type: 'navigation'}
+  ],
+  playerDialog2: [
+    {text: 'I accept this quest!', route: 'croakersQuest', type: 'navigation'},    
+    {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'},
+    {text: 'I just remembered I don\'t believe in any of this fate crap...BYE', route: 'tavern', type: 'navigation'}
   ]
 }
 
@@ -159,6 +169,12 @@ export const beholderDetails = {
   playerDialog: [
     {text: 'I accept this quest!', route: 'beholderQuest', type: 'navigation'},    
     {text: 'Tell me about the halfling quest.', route: 'halflingDetails'},
+    {text: 'Let\'s hear about those Bullywug Croakers.', route: 'croakersDetails'},
+    {text: 'I just remembered that all phenomenon are empty of any intrinsic nature and thus are all inter-dependent and, well I just gotta go...BYE!', route: 'tavern', type: 'navigation'}
+  ],
+  npcDialog2: 'ROGER: A terrible Beholder has taken up residence in the town hall. He is a vicious beast who is far beyond the abilities of any of us. You must help us! Defeat the Beholder, be the hero of this town, and recieve 10,000gp.',
+  playerDialog2: [
+    {text: 'I accept this quest!', route: 'beholderQuest', type: 'navigation'},    
     {text: 'Let\'s hear about those Bullywug Croakers.', route: 'croakersDetails'},
     {text: 'I just remembered that all phenomenon are empty of any intrinsic nature and thus are all inter-dependent and, well I just gotta go...BYE!', route: 'tavern', type: 'navigation'}
   ]
@@ -303,8 +319,6 @@ export const halflingMain3 = {
     {text: 'Follow me!', route: 'barkeep2', type: 'navigation'}    
   ]
 }
-
-
 
 export const notEnoughGold = {
   npcDialog: 'You do not have enough gold!',  
