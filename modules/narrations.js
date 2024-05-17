@@ -56,8 +56,14 @@ export const narrations = {
   croakersReward: [
     '', 'Well, well, well! You have defeated the Bullywug Croakers! As promised, an exuisite longbow. It was gifted to this town long ago by the elves and, to be honest, we\'re all too short to make any use of it!'
   ],
+  beholder: [
+    '',
+    '',
+    'You and your companion, Ivy stand face to face at last with the beholder in town hall. How will you proceed?'
+  ],
   dead: [
     'Bruh, you died.',
-    'You friggin died.'
+    'You friggin died.',
+    'Seriouly?'
   ]
 }

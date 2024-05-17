@@ -15,5 +15,6 @@ export const backgrounds = {
   croakersQuest: "url('/images/marsh.png')",
   elf: "url('/images/elf.png')",
   croakersReward: "url('/images/roger.png')",
+  beholder: "url('/images/beholder.png')",
   dead: "url('/images/dead.png')"
 }

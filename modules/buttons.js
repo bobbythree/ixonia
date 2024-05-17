@@ -92,5 +92,11 @@ export const buttons = {
     buttonOptions2: [
       {text: 'accept reward', type: 'reward', quest: 'croakers', route: 'tavern'}
     ]
+  },
+  beholder: {
+    buttonOptions3: [
+      {text: 'FIGHT', type: 'navigation', route: 'dead'},
+      {text: 'Discuss with Ivy', type: 'dialog', route: 'ivy'}
+    ]
   }
 } 
