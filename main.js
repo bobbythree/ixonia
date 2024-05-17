@@ -57,8 +57,15 @@ function createNarration(scene) {
 }
 
 function createButtons(scene) {
-  const btns = player.killedChickens ? buttons[scene].buttonOptions2 : 
-  buttons[scene].buttonOptions;
+  let btns = [];  
+  if (player.killedChickens) {
+    btns = buttons[scene].buttonOptions2; 
+  } else if (player.killedCroakers && player.killedChickens) {
+    btns = buttons[scene].buttonOptions3;
+  } else {
+    btns = buttons[scene].buttonOptions;
+  }
+
   for (let i = 0; i < btns.length; i++) {    
     const tempBtn = document.createElement('button');
     tempBtn.innerText = btns[i].text;
