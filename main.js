@@ -173,7 +173,7 @@ function buyItem(itemName) {
   } else {
     notEnoughGold();
   }
-  if (item[itemName] == 'innRoom') sleep();  
+  if (items[itemName] === 'innRoom') sleep();
 }
 
 function InventoryToButtons() {
@@ -378,5 +378,6 @@ function notEnoughGold() {
 
 function sleep() {
   player.hp = 50;
-  hpText.innerText = 50;
+  player.hp = player.hp;
+  hpText.innerText = player.hp;
 }

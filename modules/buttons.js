@@ -43,6 +43,9 @@ export const buttons = {
   innRoom: {
     buttonOptions: [      
       {text: 'Leave', type: 'navigation', route: 'halflingQuest'}
+    ],
+    buttonOptions2: [      
+      {text: 'Leave', type: 'navigation', route: 'halflingQuest'}
     ]
   },
   farmDirections: {

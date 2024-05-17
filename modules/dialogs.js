@@ -298,6 +298,11 @@ export const inn = {
     {text: 'Yes, I\'d like a room please', route: 'innPay', type: 'buy', item: 'innRoom'},    
     {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo2'},
     {text: 'I just remembered that I gotta go...BYE!', route: 'halflingQuest', type: 'navigation'}
+  ],
+  npcDialog2: 'Welcome back! Would you like a room?',
+  playerDialog2: [
+    {text: 'Yes, I\'d like a room please', route: 'innPay', type: 'buy', item: 'innRoom'},    
+    {text: 'I just remembered that I gotta go...BYE!', route: 'halflingQuest', type: 'navigation'}
   ]
 }
 
@@ -311,6 +316,10 @@ export const halfingInfo2 = {
 export const innPay = {
   npcDialog: 'Thanks! Room 1408',
   playerDialog: [
+    {text: 'Ok thanks, nite nite', route: 'innRoom', type: 'navigation'}    
+  ],
+  npcDialog2: 'Thanks! Room 1408',
+  playerDialog2: [
     {text: 'Ok thanks, nite nite', route: 'innRoom', type: 'navigation'}    
   ]
 }

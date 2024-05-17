@@ -20,6 +20,7 @@ export const narrations = {
     'Which weapon do you want to sell?'
   ],
   innRoom: [
+    'You awake fully rested',
     'You awake fully rested'
   ],
   farmDirections: [
