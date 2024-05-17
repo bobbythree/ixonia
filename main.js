@@ -49,6 +49,8 @@ function setBackground(scene) {
 function createNarration(scene) {
   if (player.killedChickens === true) {
     narrationBox.innerText = narrations[scene][1];
+  } else if (player.killedChickens && player.killedCroakers) {
+    narrationBox.innerText = narrations[scene][2];
   } else {
     narrationBox.innerText = narrations[scene][0];
   } 
