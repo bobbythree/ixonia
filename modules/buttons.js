@@ -67,5 +67,12 @@ export const buttons = {
       {text: 'accept rewards', type: 'reward', quest: 'halfling', route: 'ixonia'}
     ]
   },
-  
+  croakersQuest: {
+    buttonOptions: [
+      {text: 'retreat', type: 'navigation', route: 'ixonia'}
+    ],
+    buttonOptions2: [
+      {text: 'FIGHT!', type: 'battle', foe: 'croaker', route: 'battle'}
+    ]
+  }
 } 

@@ -8,10 +8,13 @@ export const narrations = {
   farmDirections: ['You listen as they give detailed directions to the farm in true small town fashion - go up and over the hill and then when it starts to get more woodsey, turn left...and so on.'],
   farm: ['You follow the inn keeper\'s old-timey directions until you see the chicken farm in the distance. Something does not feel right...'],
   abyssal: ['As you approach the farm you see what the problem is. The chickens have turned into ABYSSALL CHICKENS!!! Prepare for battle.'],
-  battle: ['Choose weapon'],
+  battle: ['Choose weapon, Choose weapon'],
   killChickens: ['You have defeated the Abyssal Chickens!'],
   barn: ['You make your way past the recently deceased Abyssal Chickens and toward the barn. These chickens really wreaked havoc on this farm and it appears that those who stood and fought them were not so lucky as you. As you cautiously enter the barn you hear muffled noises up in the hayloft.'],
   hayloft: ['You climb up the old wood ladder into the hayloft. The pile of hay in the corner is moving and as you approach, hoping dearly it isn\'t more chickens, the muffled noises become recognizable as human in nature. It sounds like whimpering.'],
   barkeep2: ['BARKEEP: Thank goodness you have returned my daughter to me! I was worried sick! Here is your gold reward, and a Unicorn Blood on the house as promised.'],
+  croakersQuest: [
+    'As you appoach the bridge on the way out of town, you are ambushed by 3 Bullywug Croakers. These foes are too much for you', 'As you approach the bridhe on the way out of town you are ambushed by 3 Bullywug Croakers. Let\'s do this!'
+  ],
   dead: ['Bruh, you died.']
 }

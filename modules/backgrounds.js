@@ -12,5 +12,6 @@ export const backgrounds = {
   abyssal: "url('/images/abyssal.png')",
   barn: "url('/images/barn.png')",
   barkeep2: "url('/images/barkeep.png')",
+  croakersQuest: "url('/images/marsh.png')",
   dead: "url('/images/dead.png')"
 }

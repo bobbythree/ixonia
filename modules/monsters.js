@@ -5,3 +5,11 @@ export const chicken = {
   maxDamage: 6,
   numberOfFoes: 3
 }
+
+export const croaker = {
+  initHp: 40,
+  hp: 40,
+  minDamage: 5, 
+  maxDamage: 15,
+  numberOfFoes: 3
+}
