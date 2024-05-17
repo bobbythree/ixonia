@@ -8,7 +8,8 @@ export const buttons = {
     buttonOptions: [
       {text: 'Enter Tavern', type: 'navigation', route: 'tavern'},
     ],
-    buttonoptions2: [
+    buttonOptions2: [
+      {text: 'Enter Tavern', type: 'navigation', route: 'tavern'},
       {text: 'To Aurochsmaw', type: 'navigation', route: 'halflingQuest'}
     ],    
   },
@@ -17,6 +18,11 @@ export const buttons = {
       {text: 'Talk to barkeep', type: 'dialog', route: 'barkeep'},
       {text: 'Talk to patron', type: 'dialog', route: 'patron'},
       {text: 'Look at Quests', type: 'dialog', route: 'quests'}
+    ],
+    buttonOptions2: [
+      {text: 'Talk to Esmee', type: 'dialog', route: 'barkeep'},
+      {text: 'Talk to Roger', type: 'dialog', route: 'patron'},
+      {text: 'Leave Tavern', type: 'navigation', route: 'ixonia'}
     ]    
   },
   halflingQuest: {
@@ -61,5 +67,12 @@ export const buttons = {
       {text: 'accept rewards', type: 'reward', quest: 'halfling', route: 'ixonia'}
     ]
   },
-  
+  croakersQuest: {
+    buttonOptions: [
+      {text: 'retreat', type: 'navigation', route: 'ixonia'}
+    ],
+    buttonOptions2: [
+      {text: 'FIGHT!', type: 'battle', foe: 'croaker', route: 'battle'}
+    ]
+  }
 } 

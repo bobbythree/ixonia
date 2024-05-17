@@ -56,22 +56,22 @@ function createNarration(scene) {
 }
 
 function createButtons(scene) {
-  const btns = buttons[scene].buttonOptions;
-  const btns2 = buttons[scene].buttonOptions2;
-  for (let i = 0; i < btns.length; i++) {
+  const btns = player.killedChickens ? buttons[scene].buttonOptions2 : 
+  buttons[scene].buttonOptions;
+  for (let i = 0; i < btns.length; i++) {    
     const tempBtn = document.createElement('button');
     tempBtn.innerText = btns[i].text;
     tempBtn.classList.add('btn');    
     narrationBox.appendChild(tempBtn);
     tempBtn.onclick = () => {
-      const buttonType = buttons[scene].buttonOptions[i].type;
-      const route = buttons[scene].buttonOptions[i].route;    
-      const currentMonster = buttons[scene].buttonOptions[i].foe;    
-      const questName = buttons[scene].buttonOptions[i].quest;    
+      const buttonType = btns[i].type;
+      const route = btns[i].route;    
+      const currentMonster = btns[i].foe;    
+      const questName = btns[i].quest;    
       buttonHandler(route, buttonType, currentMonster, questName);
     }
-  }  
-}
+  }
+} 
 
 function buttonHandler(route, buttonType, currentMonster, questName) {  
   switch(buttonType) {
@@ -97,9 +97,12 @@ function buttonHandler(route, buttonType, currentMonster, questName) {
   }
 }
 
-function createDialog(dialogName) {  
-  narrationBox.innerText = dialogs[dialogName].npcDialog;
-  const choices = dialogs[dialogName].playerDialog;
+function createDialog(dialogName) {
+  const npc = player.killedChickens ? dialogs[dialogName].npcDialog2 :
+  dialogs[dialogName].npcDialog;
+  narrationBox.innerText = npc;
+  const choices = player.killedChickens ? dialogs[dialogName].playerDialog2 :
+  dialogs[dialogName].playerDialog;
   for (let i = 0; i < choices.length; i++) {
     const tempBtn = document.createElement('button');
     tempBtn.innerHTML = choices[i].text;
@@ -346,4 +349,3 @@ function sleep() {
   player.hp = 50;
   hpText.innerText = 50;
 }
- 
