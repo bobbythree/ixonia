@@ -79,5 +79,10 @@ export const buttons = {
     buttonOptions2: [
       {text: 'Approach Elf', type: 'dialog', route: 'elf'}
     ]
+  },
+  croakersReward: {
+    buttonOptions2: [
+      {text: 'accept reward', type: 'reward', quest: 'croakers', route: 'patron'}
+    ]
   }
 } 

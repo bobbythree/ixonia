@@ -335,7 +335,7 @@ export const elf = {
 export const elfJoin = {
   npcDialog2: 'Ok, sure, what the heck. We are more powerful together than alone and Beholders are quite formiddable opponents to say the least.',
   playerDialog2: [
-    {text: 'C\'mon we gotta go talk to Roger. He will reward us for depeating the Croakers and get us access to the town hall.', route: 'croakersReward'},
+    {text: 'C\'mon we gotta go talk to Roger. He will reward us for depeating the Croakers and get us access to the town hall.', type: 'navigation', route: 'croakersReward'},
     {text: 'What can you tell me about the Beholder?', route: 'elfBeholderInfo'},
     {text: 'WHO ARE YOU??', route: 'elfWho', type: 'dialog'}
   ]

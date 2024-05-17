@@ -19,5 +19,8 @@ export const narrations = {
   killedCroakers: [
     '', 'As you defeat the Bullywug Croaker and gear up to fight another, suddenly from out of nowhere springs an elven woman who viciously attacks the remaining croakers defeating them almost instantly. Wow!'
   ],
+  croakersReward: [
+    '', 'Well, well, well! You have defeated the Bullywug Croakers! As promised, an exuisite longbow. It was gifted to this town long ago by the elves and, to be honest, we\'re all too short to make any use of it!'
+  ],
   dead: ['Bruh, you died.', 'You friggin died.']
 }

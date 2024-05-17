@@ -337,6 +337,9 @@ function getReward(questName) {
     player.gp += 500;
     gpText.innerText = player.gp;
     player.killedChickens = true;    
+  } else if (questName === 'croakers') {
+    buyItem('longbow');
+    player.killedCroakers = true;
   }
 }
 
