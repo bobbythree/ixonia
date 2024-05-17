@@ -47,8 +47,10 @@ function setBackground(scene) {
 }
 
 function createNarration(scene) {
-  if (player.killedChickens === true) {
+  if (player.killedChickens && !player.killedCroakers) {
     narrationBox.innerText = narrations[scene][1];
+  } else if (player.killedChickens && player.killedCroakers) {
+    narrationBox.innerText = narrations[scene][2];
   } else {
     narrationBox.innerText = narrations[scene][0];
   } 
@@ -58,7 +60,7 @@ function createNarration(scene) {
 
 function createButtons(scene) {
   let btns = [];  
-  if (player.killedChickens) {
+  if (player.killedChickens && !player.killedCroakers) {
     btns = buttons[scene].buttonOptions2; 
   } else if (player.killedCroakers && player.killedChickens) {
     btns = buttons[scene].buttonOptions3;
@@ -106,11 +108,25 @@ function buttonHandler(route, buttonType, currentMonster, questName) {
 }
 
 function createDialog(dialogName) {
-  const npc = player.killedChickens ? dialogs[dialogName].npcDialog2 :
-  dialogs[dialogName].npcDialog;
+  let npc = '';
+  if (player.killedChickens && !player.killedCroakers) {
+   npc = dialogs[dialogName].npcDialog2;
+  } else if (player.killedChickens && player.killedCroakers) {
+    npc = dialogs[dialogName].npcDialog3;
+  } else {
+    npc = dialogs[dialogName].npcDialog;
+  }  
   narrationBox.innerText = npc;
-  const choices = player.killedChickens ? dialogs[dialogName].playerDialog2 :
-  dialogs[dialogName].playerDialog;
+  
+  let choices = [];
+  if (player.killedChickens & !player.killedCroakers){
+    choices = dialogs[dialogName].playerDialog2;
+  } else if (player.killedChickens && player.killedCroakers) {
+    choices = dialogs[dialogName].playerDialog3;
+  } else {
+    choices = dialogs[dialogName].playerDialog;
+  }
+
   for (let i = 0; i < choices.length; i++) {
     const tempBtn = document.createElement('button');
     tempBtn.innerHTML = choices[i].text;

@@ -69,3 +69,10 @@ export const unicornBlood = {
   questItem: true,
   buyPrice: 0  
 }
+
+export const longbow = {
+  item: 'Longbow',
+  itemType: 'weapon',
+  questItem: true,
+  buyPrice: 0  
+}
