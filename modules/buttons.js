@@ -77,7 +77,7 @@ export const buttons = {
   },
   killedCroakers: {
     buttonOptions2: [
-      {text: 'Approach Elf', type: 'didalog', route: 'elf'}
+      {text: 'Approach Elf', type: 'dialog', route: 'elf'}
     ]
   }
 } 

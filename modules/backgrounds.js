@@ -13,5 +13,6 @@ export const backgrounds = {
   barn: "url('/images/barn.png')",
   barkeep2: "url('/images/barkeep.png')",
   croakersQuest: "url('/images/marsh.png')",
+  elf: "url('/images/elf.png')",
   dead: "url('/images/dead.png')"
 }

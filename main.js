@@ -311,6 +311,7 @@ function winBattle(currentMonster) {
     createNarration('killChickens');
     createButtons('killChickens');
   } else if (currentMonster === 'croaker') {
+    monsterStats.style.display = 'none';
     createNarration('killedCroakers');
     createButtons('killedCroakers');
   }
