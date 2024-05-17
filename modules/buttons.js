@@ -96,7 +96,17 @@ export const buttons = {
   beholder: {
     buttonOptions3: [
       {text: 'FIGHT', type: 'navigation', route: 'dead'},
-      {text: 'Discuss with Ivy', type: 'dialog', route: 'ivy'}
+      {text: 'Discuss with Ivy', type: 'navigation', route: 'ivy'}
+    ]
+  },
+  ivy: {
+    buttonOptions3: [
+      {text: 'Hand longbow and Unicorn Blood to Ivy', type: 'navigation', route: 'beholder2'},
+    ]
+  },
+  beholder2: {
+    buttonOptions3: [
+      {text: 'Next', type: 'navigation', route: 'end'}
     ]
   }
 } 
