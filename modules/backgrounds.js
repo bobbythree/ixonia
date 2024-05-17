@@ -16,5 +16,7 @@ export const backgrounds = {
   elf: "url('/images/elf.png')",
   croakersReward: "url('/images/roger.png')",
   beholder: "url('/images/beholder.png')",
+  ivy: "url('/images/elf.png')",
+  beholder2: "url('/images/beholder.png')",
   dead: "url('/images/dead.png')"
 }

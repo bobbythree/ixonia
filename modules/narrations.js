@@ -61,9 +61,20 @@ export const narrations = {
     '',
     'You and your companion, Ivy stand face to face at last with the beholder in town hall. How will you proceed?'
   ],
+  ivy: [
+    '',
+    '',
+    'IVY: Listen, we know that the Beholder is vulnerable to attacks on his main eye. Hand me the Bow! And if you have any Unicorn Blood now would be the time to let me know'
+  ],
+  beholder2: [
+    '',
+    '',
+    'You hand the longbow and the Unicorn Blood to Ivy. She dips an arrow into the blood, draws back the bowstring, and lets the arrow go. The arrow makes purchase smack dab in the middle of the Beholder\'s main eye! The Beholder shreiks in horror and drops to the floor. YOU DID IT!!'
+  ],
   dead: [
     'Bruh, you died.',
     'You friggin died.',
     'Seriouly?'
-  ]
+  ],
+  
 }
