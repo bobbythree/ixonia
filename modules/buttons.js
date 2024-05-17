@@ -23,10 +23,18 @@ export const buttons = {
       {text: 'Talk to Esmee', type: 'dialog', route: 'barkeep'},
       {text: 'Talk to Roger', type: 'dialog', route: 'patron'},
       {text: 'Leave Tavern', type: 'navigation', route: 'ixonia'}
+    ],    
+    buttonOptions3: [      
+      {text: 'Talk to Roger', type: 'dialog', route: 'patron'},      
     ]    
   },
   halflingQuest: {
     buttonOptions: [
+      {text: 'Go to Shoppe', type: 'dialog', route: 'shoppe'},
+      {text: 'Go to Inn', type: 'dialog', route: 'inn'},
+      {text: 'Back to Ixonia', type: 'navigation', route: 'ixonia'}
+    ],
+    buttonOptions2: [
       {text: 'Go to Shoppe', type: 'dialog', route: 'shoppe'},
       {text: 'Go to Inn', type: 'dialog', route: 'inn'},
       {text: 'Back to Ixonia', type: 'navigation', route: 'ixonia'}
@@ -82,7 +90,7 @@ export const buttons = {
   },
   croakersReward: {
     buttonOptions2: [
-      {text: 'accept reward', type: 'reward', quest: 'croakers', route: 'patron'}
+      {text: 'accept reward', type: 'reward', quest: 'croakers', route: 'tavern'}
     ]
   }
 } 

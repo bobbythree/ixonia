@@ -94,6 +94,7 @@ export const buyAle = {
 export const patron = {
   npcDialog: 'PATRON: Hello.',
   npcDialog2: 'ROGER: Great job rescuing Esmee\'s daughter! Ready for another quest?', 
+  npcDialog3: 'ROGER: Are you ready to face the terrible Beholder?', 
   playerDialog: [
     {text: 'Hell...HEY, don\'t I know you from somewhere?', route: 'dontIKnowYou'},
     {text: 'Are you Roger?', route: 'roger'}    
@@ -101,6 +102,11 @@ export const patron = {
   playerDialog2: [
     {text: 'Let\'s hear about those Bullywug Croakers.', route: 'croakersDetails'},
     {text: 'I want to fight that Beholder! Tell me all about it.', route: 'beholderDetails'}
+  ],
+  playerDialog3: [
+    {text: 'I was born ready!', type: 'navigation', route: 'beholder'},
+    {text: 'I feel ready...ish', type: 'navigation', route: 'beholder'},    
+    {text: 'Ready? No. Am I going to do it anyway?...also no. just kidding Lets Goooooo!', type: 'navigation', route: 'beholder'},    
   ]
 }
 
@@ -188,6 +194,12 @@ export const shoppe = {
     {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},
     {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo'},
     {text: 'I just remembered that I told my grandma I would be home in time for dinner...BYE!', route: 'halflingQuest', type: 'navigation'}
+  ],
+  npcDialog2: 'SHOPPE OWNER: Hey you\'re back! How can I help ya?',
+  playerDialog2: [
+    {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},    
+    {text: 'I just remembered that I told my grandma I would be home in time for dinner...BYE!', route: 'halflingQuest', type: 'navigation'}
   ]
 }
 
@@ -196,6 +208,11 @@ export const shoppe = {
 export const buyWeapons = {
   npcDialog: 'SHOPPE OWNER: OkeeDokee. Right now I\'ve got swords and I\'ve got blunt weapons.',
   playerDialog: [
+    {text: 'What kind of swords have you got?', route: 'swords'},    
+    {text: 'What kind of blunt weapons have you got?', route: 'bluntWeapons'},    
+  ],
+  npcDialog2: 'SHOPPE OWNER: OkeeDokee. Right now I\'ve got swords and I\'ve got blunt weapons.',
+  playerDialog2: [
     {text: 'What kind of swords have you got?', route: 'swords'},    
     {text: 'What kind of blunt weapons have you got?', route: 'bluntWeapons'},    
   ]
@@ -217,12 +234,24 @@ export const swords = {
     {text: 'I\'ll take the short sword (20gp)', route: 'buyWeapon', type: 'buy', item: 'shortSword'},    
     {text: 'I\'ll take the broad sword (60gp)', route: 'buyWeapon', type: 'buy', item: 'broadSword'},    
     {text: 'Wait, what kind of blunt weapons did you say you had?', route: 'bluntWeapons'}
+  ],
+  npcDialog2: 'I\'ve got a short sword (1-10 damage) and a broad sword (10-15 damage)',
+  playerDialog2: [
+    {text: 'I\'ll take the short sword (20gp)', route: 'buyWeapon', type: 'buy', item: 'shortSword'},    
+    {text: 'I\'ll take the broad sword (60gp)', route: 'buyWeapon', type: 'buy', item: 'broadSword'},    
+    {text: 'Wait, what kind of blunt weapons did you say you had?', route: 'bluntWeapons'}
   ]
 }
 
 export const bluntWeapons = {
   npcDialog: 'I\'ve got a morning star (5-10 damage) and a warhammer (10-20 damage)',
   playerDialog: [
+    {text: 'I\'ll take the morning star (40gp)', route: 'buyWeapon', type: 'buy', item: 'morningStar'},    
+    {text: 'I\'ll take the warhammer (100gp)', route: 'buyWeapon', type: 'buy', item: 'warHammer'},    
+    {text: 'Wait, what kind of swords did you say you had?', route: 'swords'}
+  ],
+  npcDialog2: 'I\'ve got a morning star (5-10 damage) and a warhammer (10-20 damage)',
+  playerDialog2: [
     {text: 'I\'ll take the morning star (40gp)', route: 'buyWeapon', type: 'buy', item: 'morningStar'},    
     {text: 'I\'ll take the warhammer (100gp)', route: 'buyWeapon', type: 'buy', item: 'warHammer'},    
     {text: 'Wait, what kind of swords did you say you had?', route: 'swords'}
@@ -236,6 +265,12 @@ export const buyWeapon = {
     {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},
     {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo'},
     {text: 'I just remembered that I\'m trying to catch a bus to Palatine..BYE!', route: 'halflingQuest', type: 'navigation'}
+  ],
+  npcDialog2: 'Thank you!',
+  playerDialog2: [
+    {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},    
+    {text: 'I just remembered that I\'m trying to catch a bus to Palatine..BYE!', route: 'halflingQuest', type: 'navigation'}
   ]
 }
 
@@ -245,6 +280,12 @@ export const sold = {
     {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
     {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},
     {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo'},
+    {text: 'I just remembered that I gotta go...BYE!', route: 'halflingQuest', type: 'navigation'}
+  ],
+  npcDialog2: 'Thank you!',
+  playerDialog2: [
+    {text: 'I would like to buy a weapon', route: 'buyWeapons'},    
+    {text: 'I would like to sell a weapon', route: 'sellWeapons', type: 'sell'},    
     {text: 'I just remembered that I gotta go...BYE!', route: 'halflingQuest', type: 'navigation'}
   ]
 }
