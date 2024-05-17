@@ -74,5 +74,10 @@ export const buttons = {
     buttonOptions2: [
       {text: 'FIGHT!', type: 'battle', foe: 'croaker', route: 'battle'}
     ]
+  },
+  killedCroakers: {
+    buttonOptions2: [
+      {text: 'Approach Elf', type: 'didalog', route: 'elf'}
+    ]
   }
 } 

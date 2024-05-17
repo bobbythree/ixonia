@@ -36,6 +36,7 @@ function startGame() {
   weaponsText.innerText = player.weapons;
   invText.innerText = player.inv;
   monsterStats.style.display = 'none';
+  player.killedChickens = false;
   setBackground('title');
   createNarration('title');
   createButtons('title');     
@@ -309,6 +310,9 @@ function winBattle(currentMonster) {
     setBackground('farm');
     createNarration('killChickens');
     createButtons('killChickens');
+  } else if (currentMonster === 'croaker') {
+    createNarration('killedCroakers');
+    createButtons('killedCroakers');
   }
   
 } 
