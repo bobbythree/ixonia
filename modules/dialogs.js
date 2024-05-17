@@ -320,6 +320,53 @@ export const halflingMain3 = {
   ]
 }
 
+//elf dialog
+//tier 1
+export const elf = {
+  npcDialog2: 'Nasty things, those Bullywug Croakers! I hope you don\'t mind my intrusion. I am on my way to Ixonia to see about doing away with the Beholder.',
+  playerDialog2: [
+    {text: 'I\'m hoping to defeat the Beholder too. Let\'s join forces!', route: 'elfJoin'},
+    {text: 'What can you tell me about the Beholder?', route: 'elfBeholderInfo'},
+    {text: 'WHO ARE YOU??', route: 'elfWho', type: 'dialog'}
+  ]
+}
+
+//tier 2
+export const elfJoin = {
+  npcDialog2: 'Ok, sure, what the heck. We are more powerful together than alone and Beholders are quite formiddable opponents to say the least.',
+  playerDialog2: [
+    {text: 'C\'mon we gotta go talk to Roger. He will reward us for depeating the Croakers and get us access to the town hall.', type: 'navigation', route: 'croakersReward'},
+    {text: 'What can you tell me about the Beholder?', route: 'elfBeholderInfo'},
+    {text: 'WHO ARE YOU??', route: 'elfWho', type: 'dialog'}
+  ]
+}
+
+export const elfBeholderInfo = {
+  npcDialog2: 'A Beholder is a sphere of many eyes. One big eye is in the center of its head while the other are on the end of snake-like extremities attached to it\'s head. Each eye has a different magical ability - some can turn you to stone, or melt the flesh right off ya! If the Beholder has a chance to attack us, I belive we will be toast. We must strike first and strike HARD.',
+  playerDialog2: [
+    {text: 'Let\'s join forces!', route: 'elfJoin'},
+    {text: 'So like, no mercy, got it. Do they have any weaknesses?', route: 'beholderWeakness'},
+    {text: 'WHO ARE YOU??', route: 'elfWho', type: 'dialog'}
+  ]
+}
+
+export const elfWho = {
+  npcDialog2: 'My name is Ivy of the Woodland Realm.',
+  playerDialog2: [
+    {text: 'Nice to meet you. I\'m hooping to defeat the beholder too...let join forces!', route: 'elfJoin'},
+    {text: 'What can you tell me about the Beholder?', route: 'elfBeholderInfo'}    
+  ]
+}
+
+//tier 3
+export const beholderWeakness = {
+  npcDialog2: 'They are vulnerable in their main eye. I plan to shoot an arrow straight into it. I hope it will be enough. I have also heard rumors that they are sensitive to unicorn blood.',
+  playerDialog2: [
+    {text: 'Let\'s join forces!', route: 'elfJoin'},    
+    {text: 'WHO ARE YOU??', route: 'elfWho', type: 'dialog'}
+  ]
+}
+
 export const notEnoughGold = {
   npcDialog: 'You do not have enough gold!',  
 }

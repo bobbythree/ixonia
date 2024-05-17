@@ -11,5 +11,5 @@ export const croaker = {
   hp: 40,
   minDamage: 5, 
   maxDamage: 15,
-  numberOfFoes: 3
+  numberOfFoes: 1
 }

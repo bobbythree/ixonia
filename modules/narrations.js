@@ -8,7 +8,7 @@ export const narrations = {
   farmDirections: ['You listen as they give detailed directions to the farm in true small town fashion - go up and over the hill and then when it starts to get more woodsey, turn left...and so on.'],
   farm: ['You follow the inn keeper\'s old-timey directions until you see the chicken farm in the distance. Something does not feel right...'],
   abyssal: ['As you approach the farm you see what the problem is. The chickens have turned into ABYSSALL CHICKENS!!! Prepare for battle.'],
-  battle: ['Choose weapon, Choose weapon'],
+  battle: ['Choose weapon', 'Choose weapon'],
   killChickens: ['You have defeated the Abyssal Chickens!'],
   barn: ['You make your way past the recently deceased Abyssal Chickens and toward the barn. These chickens really wreaked havoc on this farm and it appears that those who stood and fought them were not so lucky as you. As you cautiously enter the barn you hear muffled noises up in the hayloft.'],
   hayloft: ['You climb up the old wood ladder into the hayloft. The pile of hay in the corner is moving and as you approach, hoping dearly it isn\'t more chickens, the muffled noises become recognizable as human in nature. It sounds like whimpering.'],
@@ -16,5 +16,11 @@ export const narrations = {
   croakersQuest: [
     'As you appoach the bridge on the way out of town, you are ambushed by 3 Bullywug Croakers. These foes are too much for you', 'As you approach the bridhe on the way out of town you are ambushed by 3 Bullywug Croakers. Let\'s do this!'
   ],
-  dead: ['Bruh, you died.']
+  killedCroakers: [
+    '', 'As you defeat the Bullywug Croaker and gear up to fight another, suddenly from out of nowhere springs an elven woman who viciously attacks the remaining croakers defeating them almost instantly. Wow!'
+  ],
+  croakersReward: [
+    '', 'Well, well, well! You have defeated the Bullywug Croakers! As promised, an exuisite longbow. It was gifted to this town long ago by the elves and, to be honest, we\'re all too short to make any use of it!'
+  ],
+  dead: ['Bruh, you died.', 'You friggin died.']
 }

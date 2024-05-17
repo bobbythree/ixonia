@@ -36,6 +36,7 @@ function startGame() {
   weaponsText.innerText = player.weapons;
   invText.innerText = player.inv;
   monsterStats.style.display = 'none';
+  player.killedChickens = false;
   setBackground('title');
   createNarration('title');
   createButtons('title');     
@@ -309,6 +310,10 @@ function winBattle(currentMonster) {
     setBackground('farm');
     createNarration('killChickens');
     createButtons('killChickens');
+  } else if (currentMonster === 'croaker') {
+    monsterStats.style.display = 'none';
+    createNarration('killedCroakers');
+    createButtons('killedCroakers');
   }
   
 } 
@@ -332,6 +337,9 @@ function getReward(questName) {
     player.gp += 500;
     gpText.innerText = player.gp;
     player.killedChickens = true;    
+  } else if (questName === 'croakers') {
+    buyItem('longbow');
+    player.killedCroakers = true;
   }
 }
 
