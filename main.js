@@ -187,7 +187,7 @@ function InventoryToButtons() {
       const saleItem = toCamelCase(str);
       sellItem(saleItem);
       createDialog('sold');      
-    }
+    } 
   })
 }
 

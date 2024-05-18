@@ -17,7 +17,7 @@ export const buttons = {
     buttonOptions: [
       {text: 'Talk to barkeep', type: 'dialog', route: 'barkeep'},
       {text: 'Talk to patron', type: 'dialog', route: 'patron'},
-      {text: 'Look at Quests', type: 'dialog', route: 'quests'}
+      {text: 'Look at Quests', type: 'navigation', route: 'quests'}
     ],
     buttonOptions2: [
       {text: 'Talk to Esmee', type: 'dialog', route: 'barkeep'},
@@ -27,6 +27,11 @@ export const buttons = {
     buttonOptions3: [      
       {text: 'Talk to Roger', type: 'dialog', route: 'patron'},      
     ]    
+  },
+  quests: {
+    buttonOptions: [
+      {text: 'Back', type: 'navigation', route: 'tavern'}
+    ]
   },
   halflingQuest: {
     buttonOptions: [

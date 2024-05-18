@@ -12,6 +12,9 @@ export const narrations = {
     '',
     'Well, looks like there\'s nothing left to do but go and fight that Beholder. Go talk to Roger when you\'re ready.'
   ],
+  quests: [
+    ''
+  ],
   halflingQuest: [
     'You arrive in the town of Aurochsmaw, a sleepy little farming community in the hills. You can see a Shoppe as well as an Inn.',
     'You return to Aurochsmaw.'
