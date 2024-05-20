@@ -103,7 +103,10 @@ function buttonHandler(route, buttonType, currentMonster, questName) {
       setBackground(route);
       createNarration(route);
       createButtons(route);
-      break;       
+      break;
+      case 'win':        
+        winGame();
+        break;       
   }
 }
 
@@ -401,4 +404,25 @@ function sleep() {
   player.gp -= 20;
   player.gp = player.gp;
   gpText.innerText = player.gp;
+}
+
+function winGame() {
+  createButtons('beholder2');
+  createNarration('beholder2');
+  const questWeapon = player.weapons.indexOf('longbow');
+  player.weapons.splice(questWeapon, 1) 
+  const questItem = player.inv.indexOf('unicornBlood');
+  player.inv.splice(questItem, 1);
+  updateItemInv();
+  updateWeaponInv();
+  const tempBtn = document.createElement('button');
+  tempBtn.innerText = 'Next';
+  tempBtn.className = 'btn';
+  narrationBox.appendChild(tempBtn);
+  tempBtn.onclick = () => {
+    player.gp += 10000;
+    gpText.innerText = player.gp;
+    setBackground('win');
+    createNarration('win');
+  } 
 }

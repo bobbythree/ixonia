@@ -108,12 +108,12 @@ export const buttons = {
   },
   ivy: {
     buttonOptions3: [
-      {text: 'Hand longbow and Unicorn Blood to Ivy', type: 'navigation', route: 'beholder2'},
+      {text: 'Hand longbow and Unicorn Blood to Ivy', type: 'win'},
     ]
   },
   beholder2: {
     buttonOptions3: [
-      {text: 'Next', type: 'navigation', route: 'win'}
+      // {text: 'Next', type: 'navigation', route: 'win'}
     ]
   },
   win: {
