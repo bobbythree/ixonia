@@ -409,6 +409,7 @@ function sleep() {
 function winGame() {
   createButtons('beholder2');
   createNarration('beholder2');
+  setBackground('beholder2')
   const questWeapon = player.weapons.indexOf('longbow');
   player.weapons.splice(questWeapon, 1) 
   const questItem = player.inv.indexOf('unicornBlood');
