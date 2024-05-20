@@ -295,13 +295,13 @@ export const sold = {
 export const inn = {
   npcDialog: 'Welcome to the Aurochsmaw Inn! 20gp per night. Would you like a room?',
   playerDialog: [
-    {text: 'Yes, I\'d like a room please', route: 'innPay', type: 'buy', item: 'innRoom'},    
+    {text: 'Yes, I\'d like a room please', route: 'innPay', type: 'sleep'},    
     {text: 'I\'m looking for a missing halfling girl.', route: 'halfingInfo2'},
     {text: 'I just remembered that I gotta go...BYE!', route: 'halflingQuest', type: 'navigation'}
   ],
   npcDialog2: 'Welcome back! Would you like a room?',
   playerDialog2: [
-    {text: 'Yes, I\'d like a room please', route: 'innPay', type: 'buy', item: 'innRoom'},    
+    {text: 'Yes, I\'d like a room please', route: 'innPay', type: 'sleep'},    
     {text: 'I just remembered that I gotta go...BYE!', route: 'halflingQuest', type: 'navigation'}
   ]
 }

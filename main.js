@@ -149,6 +149,10 @@ function createDialog(dialogName) {
           createNarration(route);
           InventoryToButtons();
           break;
+        case 'sleep':
+          sleep();
+          createDialog(route);
+          break;
         default:
         createDialog(route); 
       }      
@@ -390,4 +394,7 @@ function sleep() {
   player.hp = 50;
   player.hp = player.hp;
   hpText.innerText = player.hp;
+  player.gp -= 20;
+  player.gp = player.gp;
+  gpText.innerText = player.gp;
 }
