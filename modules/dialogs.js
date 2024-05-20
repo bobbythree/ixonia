@@ -247,13 +247,15 @@ export const swords = {
   playerDialog: [
     {text: 'I\'ll take the short sword (20gp)', route: 'buyWeapon', type: 'buy', item: 'shortSword'},    
     {text: 'I\'ll take the broad sword (60gp)', route: 'buyWeapon', type: 'buy', item: 'broadSword'},    
-    {text: 'Wait, what kind of blunt weapons did you say you had?', route: 'bluntWeapons'}
+    {text: 'Wait, what kind of blunt weapons did you say you had?', route: 'bluntWeapons'},
+    {text: 'Actually, I changed my mind I don\'t want to buy anything', route: 'shoppe'}
   ],
   npcDialog2: 'I\'ve got a short sword (1-10 damage) and a broad sword (10-15 damage)',
   playerDialog2: [
     {text: 'I\'ll take the short sword (20gp)', route: 'buyWeapon', type: 'buy', item: 'shortSword'},    
     {text: 'I\'ll take the broad sword (60gp)', route: 'buyWeapon', type: 'buy', item: 'broadSword'},    
-    {text: 'Wait, what kind of blunt weapons did you say you had?', route: 'bluntWeapons'}
+    {text: 'Wait, what kind of blunt weapons did you say you had?', route: 'bluntWeapons'},
+    {text: 'Actually, I changed my mind I don\'t want to buy anything', route: 'shoppe'}
   ]
 }
 
@@ -262,13 +264,15 @@ export const bluntWeapons = {
   playerDialog: [
     {text: 'I\'ll take the morning star (40gp)', route: 'buyWeapon', type: 'buy', item: 'morningStar'},    
     {text: 'I\'ll take the warhammer (100gp)', route: 'buyWeapon', type: 'buy', item: 'warHammer'},    
-    {text: 'Wait, what kind of swords did you say you had?', route: 'swords'}
+    {text: 'Wait, what kind of swords did you say you had?', route: 'swords'},
+    {text: 'Actually, I changed my mind I don\'t want to buy anything', route: 'shoppe'}
   ],
   npcDialog2: 'I\'ve got a morning star (5-10 damage) and a warhammer (10-20 damage)',
   playerDialog2: [
     {text: 'I\'ll take the morning star (40gp)', route: 'buyWeapon', type: 'buy', item: 'morningStar'},    
     {text: 'I\'ll take the warhammer (100gp)', route: 'buyWeapon', type: 'buy', item: 'warHammer'},    
-    {text: 'Wait, what kind of swords did you say you had?', route: 'swords'}
+    {text: 'Wait, what kind of swords did you say you had?', route: 'swords'},
+    {text: 'Actually, I changed my mind I don\'t want to buy anything', route: 'shoppe'}
   ]
 }
 

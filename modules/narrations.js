@@ -40,7 +40,7 @@ export const narrations = {
     'Choose weapon'
   ],
   killChickens: [
-    'You have defeated the Abyssal Chickens!'
+    'As you deliver the killing blow to the 3rd Abyssal Chicken, the remaining foes abandon the battle and run off across the fields. Huzzah!'
   ],
   barn: [
     'You make your way past the recently deceased Abyssal Chickens and toward the barn. These chickens really wreaked havoc on this farm and it appears that those who stood and fought them were not so lucky as you. As you cautiously enter the barn you hear muffled noises up in the hayloft.'
