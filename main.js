@@ -344,11 +344,15 @@ function killMonster(currentMonster) {
 function winBattle(currentMonster) {
   if (currentMonster === 'chicken') {
     monsterStats.style.display = 'none';
+    monsters.chicken.hp = 20  
+    monsters.chicken.numberOfFoes = 3;    
     setBackground('farm');
     createNarration('killChickens');
     createButtons('killChickens');
   } else if (currentMonster === 'croaker') {
     monsterStats.style.display = 'none';
+    monsters.croaker.hp = 40  
+    monsters.chicken.numberOfFoes = 1;
     createNarration('killedCroakers');
     createButtons('killedCroakers');
   }
