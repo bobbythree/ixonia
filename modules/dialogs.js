@@ -173,16 +173,30 @@ export const croakersDetails = {
 export const beholderDetails = {
   npcDialog: 'ROGER: A terrible Beholder has taken up residence in the town hall. He is a vicious beast who is far beyond the abilities of any of us. You must help us! Defeat the Beholder, be the hero of this town, and recieve 10,000gp.',
   playerDialog: [
-    {text: 'I accept this quest!', route: 'beholderQuest', type: 'navigation'},    
+    {text: 'I accept this quest!', route: 'beholderDenied', type: 'dialog'},    
     {text: 'Tell me about the halfling quest.', route: 'halflingDetails'},
     {text: 'Let\'s hear about those Bullywug Croakers.', route: 'croakersDetails'},
     {text: 'I just remembered that all phenomenon are empty of any intrinsic nature and thus are all inter-dependent and, well I just gotta go...BYE!', route: 'tavern', type: 'navigation'}
   ],
   npcDialog2: 'ROGER: A terrible Beholder has taken up residence in the town hall. He is a vicious beast who is far beyond the abilities of any of us. You must help us! Defeat the Beholder, be the hero of this town, and recieve 10,000gp.',
   playerDialog2: [
-    {text: 'I accept this quest!', route: 'beholderQuest', type: 'navigation'},    
+    {text: 'I accept this quest!', route: 'beholderDenied', type: 'dialog'},    
     {text: 'Let\'s hear about those Bullywug Croakers.', route: 'croakersDetails'},
     {text: 'I just remembered that all phenomenon are empty of any intrinsic nature and thus are all inter-dependent and, well I just gotta go...BYE!', route: 'tavern', type: 'navigation'}
+  ]
+}
+
+export const beholderDenied = {
+  npcDialog: 'Not so fast buddy. Take it easy, you just got here. Maybe try an easier quest?',
+  playerDialog: [
+    {text: 'Tell me about the halfling quest.', route: 'halflingDetails'},
+    {text: 'Let\'s hear about those Bullywug Croakers.', route: 'croakersDetails'},
+    {text: 'I just remembered that I have to practice my lines for the school play....BYE', route: 'tavern', type: 'navigation'}
+  ],
+  npcDialog2: 'Not so fast buddy. Take it easy, you just got here. Maybe try an easier quest?',
+  playerDialog2: [    
+    {text: 'Let\'s hear about those Bullywug Croakers.', route: 'croakersDetails'},
+    {text: 'I just remembered that I have to practice my lines for the school play....BYE', route: 'tavern', type: 'navigation'}
   ]
 }
 
