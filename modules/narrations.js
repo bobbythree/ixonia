@@ -78,7 +78,12 @@ export const narrations = {
   dead: [
     'Bruh, you died.',
     'You friggin died.',
-    'Seriouly?'
+    'Dude. Seriously?'
   ],
+  end: [
+    '',
+    '',
+    ''
+  ]
   
 }

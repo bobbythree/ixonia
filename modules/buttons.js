@@ -116,5 +116,10 @@ export const buttons = {
     buttonOptions3: [
       {text: 'Next', type: 'navigation', route: 'end'}
     ]
+  },
+  end: {
+    buttonOptions3: [
+      
+    ]
   }
 } 
