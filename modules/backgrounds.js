@@ -20,5 +20,5 @@ export const backgrounds = {
   ivy: "url('/images/elf.png')",
   beholder2: "url('/images/beholder.png')",
   dead: "url('/images/dead.png')",
-  end: "url('/images/end.png')"
+  win: "url('/images/win.png')"
 }

@@ -80,10 +80,10 @@ export const narrations = {
     'You friggin died.',
     'Dude. Seriously?'
   ],
-  end: [
+  win: [
     '',
     '',
-    ''
+    'Visit github.com/bobbythree to see more projects'
   ]
   
 }

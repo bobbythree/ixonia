@@ -113,10 +113,10 @@ export const buttons = {
   },
   beholder2: {
     buttonOptions3: [
-      {text: 'Next', type: 'navigation', route: 'end'}
+      {text: 'Next', type: 'navigation', route: 'win'}
     ]
   },
-  end: {
+  win: {
     buttonOptions3: [
       
     ]
