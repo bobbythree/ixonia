@@ -1,7 +1,7 @@
 export const player = {
-  hp: 0,
-  gp: 0,
-  weapons: [],
+  hp: 50,
+  gp: 100,
+  weapons: ['Wooden Sword'],
   inv: [],
   killedChickens: false,
   killedCroakers: false

@@ -29,7 +29,7 @@ window.addEventListener('load', () => {
 function startGame() {
   player.hp = 50;
   player.gp = 100;  
-  player.weapons = ['Wooden Sword'];
+  player.weapons = ['Wooden Sword'];  
   player.inv = [];
   hpText.innerText = player.hp;
   gpText.innerText = player.gp;
@@ -177,18 +177,28 @@ function buyItem(itemName) {
 }
 
 function InventoryToButtons() {
-  player.weapons.forEach(e => {
+  if (player.weapons.length == 0) {
     const tempBtn = document.createElement('button');
-    tempBtn.innerText = e;
+    tempBtn.innerText = 'Back';
     tempBtn.classList.add('btn');
     narrationBox.appendChild(tempBtn);
     tempBtn.onclick = () => {
-      const str = e;
-      const saleItem = toCamelCase(str);
-      sellItem(saleItem);
-      createDialog('sold');      
-    } 
-  })
+      createDialog('shoppe');      
+    }
+  } else {
+    player.weapons.forEach(e => {
+      const tempBtn = document.createElement('button');
+      tempBtn.innerText = e;
+      tempBtn.classList.add('btn');
+      narrationBox.appendChild(tempBtn);
+      tempBtn.onclick = () => {
+        const str = e;
+        const saleItem = toCamelCase(str);
+        sellItem(saleItem);
+        createDialog('sold');      
+      } 
+    })    
+  }  
 }
 
 function sellItem(itemName) {
