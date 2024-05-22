@@ -19,7 +19,7 @@ const weaponsText = document.getElementById('weaponsText');
 const invText = document.getElementById('invText');
 const monsterStats = document.getElementById('monsterStats');
 const monsterHpText = document.getElementById('monsterHpText');
-
+const backgroundImg = document.getElementById('backgroundImg');
 
 //start game
 window.addEventListener('load', () => {
@@ -43,10 +43,7 @@ function startGame() {
 }
  
 function setBackground(scene) {  
-  let img = document.createElement('img');
-  img.src = backgrounds[scene];
-  screen.innerHTML = null;
-  screen.append(img);
+  backgroundImg.src = backgrounds[scene];
 }
 
 function createNarration(scene) {
