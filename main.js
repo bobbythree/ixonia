@@ -122,7 +122,7 @@ function createDialog(dialogName) {
   narrationBox.innerText = npc;
   
   let choices = [];
-  if (player.killedChickens & !player.killedCroakers){
+  if (player.killedChickens && !player.killedCroakers){
     choices = dialogs[dialogName].playerDialog2;
   } else if (player.killedChickens && player.killedCroakers) {
     choices = dialogs[dialogName].playerDialog3;
