@@ -43,7 +43,7 @@ function startGame() {
 }
  
 function setBackground(scene) {  
-  let img = document.createElement('img');
+  let img = document.getElementById("backgroundImg");// document.createElement('img');
   img.src = backgrounds[scene];
   screen.innerHTML = null;
   screen.append(img);
