@@ -45,11 +45,19 @@ body {
   color: rgb(202, 0, 0);  
 }
 
-#screen {  
+#screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
   width: 600px;
   height: 400px;
   background-color: black;
   border: 5px solid rgb(0, 0, 0);
+}
+
+#screen img {
+  width: 590px;
+  height: 390px;
 }
 
 #text {
