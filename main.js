@@ -42,8 +42,11 @@ function startGame() {
   createButtons('title');     
 }
  
-function setBackground(scene) {
-  screen.style.backgroundImage = backgrounds[scene];
+function setBackground(scene) {  
+  let img = document.createElement('img');
+  img.src = backgrounds[scene];
+  screen.innerHTML = null;
+  screen.append(img);
 }
 
 function createNarration(scene) {
