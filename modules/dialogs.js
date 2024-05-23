@@ -438,7 +438,10 @@ export const beholderWeakness = {
 export const notEnoughGold = {
   npcDialog: 'You do not have enough gold!',  
   npcDialog2: 'You do not have enough gold!',  
-  npcDialog3: 'You do not have enough gold!'  
+  npcDialog3: 'You do not have enough gold!',
+  playerDialog: '',  
+  playerDialog2: '', 
+  playerDialog3: ''  
 }
 
 
