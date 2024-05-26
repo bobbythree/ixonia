@@ -38,7 +38,7 @@ export const bye = {
   playerDialog: [
     {text: 'Bye.', type: 'navigation', route: 'tavern'},
     {text: 'Caio', type: 'navigation', route: 'tavern'},
-    {text: 'Peace out!', type: 'navigation', route: 'tavern'},    
+    {text: 'Peace out!', type: 'navigation', route: 'tavern'}   
   ] 
 }
 
@@ -47,7 +47,7 @@ export const beholderInfo2 = {
   npcDialog: 'BARKEEP: Ok sure, good luck bud. See the quest board if you\'re serious',
   playerDialog: [
     {text: 'What do you have to drink in this place?', route: 'drinks'},
-    {text: 'I just remembered I left dog alone in the buggy.', route: 'bye'},       
+    {text: 'I just remembered I left dog alone in the buggy.', route: 'bye'}       
   ] 
 }
 
@@ -56,7 +56,7 @@ export const ale = {
   playerDialog: [
     {text: 'Here\'s 1gp', type: 'buy', item: 'ale', route: 'buyAle'},
     {text: 'Actually I changed my mind, Lemme get that Unicorn Blood', route: 'unicornBlood'},
-    {text: 'I just remembered that my house is on fire...', route: 'bye'},
+    {text: 'I just remembered that my house is on fire...', route: 'bye'}
   ]
 }
 
@@ -65,16 +65,16 @@ export const tofuPups = {
   playerDialog: [
     {text: 'Um, just kidding, I\'ll have an ale.', route: 'ale'},
     {text: 'I said lemme get that Unicorn Blood!', route: 'unicornBlood'},
-    {text: 'I just remembered that I gotta go...', route: 'bye'},
+    {text: 'I just remembered that I gotta go...', route: 'bye'}
   ]
 }
 
 export const unicornBlood = {
   npcDialog: 'BARKEEP: Listen, you seem like a nice adventurer and all, but I don\'t think you\'re ready for Unicorn Blood. Tell ya what, come back when you\'ve proven yourself as a real hero and I\'ll give you a Unicorn Blood on the house!',
   playerDialog: [
-    {text: 'Ok, I\'ll be BACK', route: 'bye'},
-    {text: 'Ok, I\'ll BE back', route: 'bye'},
-    {text: 'Ok, I\'LL be back', route: 'bye'},
+    {text: 'I shall return!', route: 'bye'},
+    {text: 'I SHALL return!', route: 'bye'},
+    {text: 'I shall RETURN!', route: 'bye'}
   ]
 }
 
@@ -84,7 +84,7 @@ export const buyAle = {
   playerDialog: [
     {text: 'Thanks, bye', route: 'bye'},
     {text: 'Lemme get that Unicorn Blood!', route: 'unicornBlood'},
-    {text: 'What\'s this I hear about a beholder in town hall?', route: 'beholderInfo'},
+    {text: 'What\'s this I hear about a beholder in town hall?', route: 'beholderInfo'}
   ]
 }
 
@@ -106,7 +106,7 @@ export const patron = {
   playerDialog3: [
     {text: 'I was born ready!', type: 'navigation', route: 'beholder'},
     {text: 'I feel ready...ish', type: 'navigation', route: 'beholder'},    
-    {text: 'Ready? No. Am I going to do it anyway?...also no. just kidding Lets Goooooo!', type: 'navigation', route: 'beholder'},    
+    {text: 'Ready? No. Am I going to do it anyway?...also no. Just kidding - Lets Goooooo!', type: 'navigation', route: 'beholder'}    
   ]
 }
 
@@ -122,7 +122,7 @@ export const roger = {
   npcDialog: 'ROGER: Yep, that\'s me.',
   playerDialog: [
     {text: 'The quest board over there says to ask you for details.', route: 'quests'},    
-    {text: 'What the heck are ya wearing???', route: 'outfit'},
+    {text: 'What the heck are ya wearing???', route: 'outfit'}
   ]
 }
 
@@ -228,7 +228,7 @@ export const buyWeapons = {
   npcDialog2: 'SHOPPE OWNER: OkeeDokee. Right now I\'ve got swords and I\'ve got blunt weapons.',
   playerDialog2: [
     {text: 'What kind of swords have you got?', route: 'swords'},    
-    {text: 'What kind of blunt weapons have you got?', route: 'bluntWeapons'},    
+    {text: 'What kind of blunt weapons have you got?', route: 'bluntWeapons'}    
   ]
 }
 
@@ -362,8 +362,7 @@ export const halflingMain = {
 export const halflingFunny = {
   npcDialog: 'PILE OF HAY: Now is not the time for puns!',
   playerDialog: [
-    {text: 'My apologies, when I\'m uncomfortable my only coping skill seems to be dad humor. Please come out from there, no more puns I promise.', route: 'halflingMain'},
-    
+    {text: 'My apologies, when I\'m uncomfortable my only coping skill seems to be dad humor. Please come out from there, no more puns I promise.', route: 'halflingMain'}
   ]
 }
 

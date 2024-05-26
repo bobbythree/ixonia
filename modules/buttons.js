@@ -25,7 +25,7 @@ export const buttons = {
       {text: 'Leave Tavern', type: 'navigation', route: 'ixonia'}
     ],    
     buttonOptions3: [      
-      {text: 'Talk to Roger', type: 'dialog', route: 'patron'},      
+      {text: 'Talk to Roger', type: 'dialog', route: 'patron'}      
     ]    
   },
   quests: {
@@ -36,7 +36,7 @@ export const buttons = {
   halflingQuest: {
     buttonOptions: [
       {text: 'Go to Shoppe', type: 'dialog', route: 'shoppe'},
-      {text: 'Go to Inn', type: 'dialog', route: 'inn'},      
+      {text: 'Go to Inn', type: 'dialog', route: 'inn'}      
     ],
     buttonOptions2: [
       {text: 'Go to Shoppe', type: 'dialog', route: 'shoppe'},
@@ -108,7 +108,7 @@ export const buttons = {
   },
   ivy: {
     buttonOptions3: [
-      {text: 'Hand longbow and Unicorn Blood to Ivy', type: 'win'},
+      {text: 'Hand longbow and Unicorn Blood to Ivy', type: 'win'}
     ]
   },
   beholder2: {
