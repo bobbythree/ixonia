@@ -4,4 +4,4 @@ Ixonia is a text-based, multiple choice adventure game written in vanilla Javasc
 
 ## Playing this game
 To run this game locally on your machine, clone this repo and run from the index.html file in a live server.
-To play in your browser click [here.](https/bobbythree.github.io/ixonia)
+To play in your browser click [here.](https://bobbythree.github.io/ixonia)
