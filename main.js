@@ -41,11 +41,13 @@ function startGame() {
   createNarration('title');
   createButtons('title');     
 }
- 
+
+//set scene background
 function setBackground(scene) {  
   backgroundImg.src = backgrounds[scene];
 }
 
+//desplay narration text on screen
 function createNarration(scene) {
   if (player.killedChickens && !player.killedCroakers) {
     narrationBox.innerText = narrations[scene][1];
@@ -58,6 +60,7 @@ function createNarration(scene) {
   narrationBox.appendChild(br);
 }
 
+//create buttons for everything except dialog
 function createButtons(scene) {
   let btns = [];  
   if (player.killedChickens && !player.killedCroakers) {
@@ -83,6 +86,7 @@ function createButtons(scene) {
   }
 } 
 
+//handle button clicks
 function buttonHandler(route, buttonType, currentMonster, questName) {  
   switch(buttonType) {
     case 'navigation':
@@ -110,6 +114,7 @@ function buttonHandler(route, buttonType, currentMonster, questName) {
   }
 }
 
+//display dialog
 function createDialog(dialogName) {
   let npc = '';
   if (player.killedChickens && !player.killedCroakers) {
@@ -163,6 +168,7 @@ function createDialog(dialogName) {
   }  
 }
 
+//buying
 function buyItem(itemName) {
   const item = items[itemName].item;
   const cost = items[itemName].buyPrice;
@@ -183,6 +189,7 @@ function buyItem(itemName) {
   if (items[itemName] === 'innRoom') sleep();
 }
 
+//display sellable items on screen as buttons
 function InventoryToButtons() {
   if (player.weapons.length == 0) {
     const tempBtn = document.createElement('button');
@@ -208,6 +215,7 @@ function InventoryToButtons() {
   }  
 }
 
+//selling
 function sellItem(itemName) {
   const item = items[itemName].item;
   const price = items[itemName].sellPrice;
@@ -219,6 +227,7 @@ function sellItem(itemName) {
   weaponsText.innerText = player.weapons;
 }
 
+//update inventories after buying or selling
 function updateItemInv() {
   let itemInv = player.inv;
   let newItemInv = [...new Set(itemInv)]; //gets rid of dupes
@@ -234,6 +243,7 @@ function updateWeaponInv() {
   weaponsText.innerHTML = newWeaponInv; 
 }
 
+//fighting
 function battle(currentMonster) {
   //select weapon
   player.weapons.forEach(e => {
@@ -249,6 +259,7 @@ function battle(currentMonster) {
   })
 }
 
+//player attacks monster
 function attack(currentWeapon, currentMonster) {
   const minDamage = items[currentWeapon].minDamage;
   const maxDamage = items[currentWeapon].maxDamage;
@@ -282,12 +293,14 @@ function attack(currentWeapon, currentMonster) {
   }
 }
 
+//damage for player or monster
 function damage(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);  
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+// monster attacks player
 function monsterAttack(currentMonster) {
   const minDamage = monsters[currentMonster].minDamage;
   const maxDamage = monsters[currentMonster].maxDamage;
@@ -322,6 +335,7 @@ function monsterAttack(currentMonster) {
   }
 }
 
+//defeat monster
 function killMonster(currentMonster) {
   monsters[currentMonster].numberOfFoes--;
   console.log(monsters[currentMonster].numberOfFoes);
@@ -344,6 +358,7 @@ function killMonster(currentMonster) {
   }
 }
 
+//navigation and monster stat reset after winning battles
 function winBattle(currentMonster) {
   if (currentMonster === 'chicken') {
     monsterStats.style.display = 'none';
@@ -362,6 +377,7 @@ function winBattle(currentMonster) {
   
 } 
 
+//player losses battle
 function killPlayer() {
   setBackground('dead');
   createNarration('dead');
@@ -375,6 +391,7 @@ function killPlayer() {
   
 }
 
+//quest rewards
 function getReward(questName) {
   if (questName === 'halfling') {
     buyItem('unicornBlood');
@@ -387,16 +404,19 @@ function getReward(questName) {
   }
 }
 
+//validation for items 
 function toCamelCase(str) {
   return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
   return index === 0 ? word.toLowerCase() : word.toUpperCase();
   }).replace(/\s+/g, '');
 }
 
+//if not enough gold for buying
 function notEnoughGold() {
   createDialog('notEnoughGold');
 }
 
+//sleep at inn
 function sleep() {
   player.hp = 50;
   player.hp = player.hp;
@@ -406,6 +426,7 @@ function sleep() {
   gpText.innerText = player.gp;
 }
 
+//winning the game
 function winGame() {
   createButtons('beholder2');
   createNarration('beholder2');
