@@ -112,3 +112,30 @@ body {
   color: rgb(170, 236, 251);
   transition: 0.5s;
 }
+
+@media screen and (max-width: 700px) {
+  #container {
+    width: 90%;
+    height: auto;
+  }
+  #playerStats {
+    width: 90%;
+    height: auto;
+  }
+  #monsterStats {
+    width: 90%;
+    height: auto;
+  }
+  #screen {
+    width: 90%;
+    height: auto;
+  }
+  #text {
+    width: 90%;
+    height: auto;
+  }
+  #screen img {
+    width: 100%;
+    height: auto;
+  }
+}
