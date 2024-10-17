@@ -1,3 +1,6 @@
+//This module contains the dialog objects. Text behaves like a clickable button. The text attributes dictate whether or not the scene will change when clicked and if so, what the next scene will be (route).
+
+
 //barkeep first dialog
 //tier 1
 export const barkeep = {

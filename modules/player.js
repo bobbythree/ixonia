@@ -1,3 +1,4 @@
+//player stats
 export const player = {
   hp: 50,
   gp: 100,

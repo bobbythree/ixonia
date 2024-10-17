@@ -404,7 +404,7 @@ function getReward(questName) {
   }
 }
 
-//validation for items 
+//camelCase util for game items 
 function toCamelCase(str) {
   return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
   return index === 0 ? word.toLowerCase() : word.toUpperCase();

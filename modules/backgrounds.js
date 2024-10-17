@@ -1,3 +1,5 @@
+//This module contrtains all scene background images
+
 export const backgrounds = {
   title: 'images/title.png',
   ixonia: 'images/ixonia.png',

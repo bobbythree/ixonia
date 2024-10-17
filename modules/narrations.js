@@ -1,3 +1,5 @@
+//this module contains all text that appears while NOT in dialog with an NPC. It contains the Narrator's speech.
+
 export const narrations = {
   title: [
     'Welcome to Ixonia! a game made by Robert Lewis III. Our adventurer finds themselves in the town of Ixonia where a terible Beholder has taken over the town hall. Click the start button to begin!'    

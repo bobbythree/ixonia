@@ -1,3 +1,5 @@
+//Monster stats
+
 export const chicken = {
   initHp: 20,
   hp: 20,

@@ -1,3 +1,5 @@
+//this module contains the text and functionality for game buttons. Buttons are used for navigation purposes when the player makes a choice.
+
 export const buttons = {
   title: {
     buttonOptions: [

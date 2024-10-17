@@ -1,3 +1,5 @@
+//This module contins stats for each item in the game. 
+
 export const ale = {
   item: 'Ale',
   buyPrice: 1,
