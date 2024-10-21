@@ -1,5 +1,12 @@
 //This module contrtains all scene background images
 
+function preloadImages(backgrounds) {
+	for(let i = 0; i < backgrounds.length; i++) {
+		const img = new Image;
+		img.src = backgrounds[i]
+	}
+}
+
 export const backgrounds = {
   title: 'images/title.png',
   ixonia: 'images/ixonia.png',
@@ -26,3 +33,5 @@ export const backgrounds = {
   dead: 'images/dead.png',
   win: 'images/win.png'
 }
+
+preloadImages(backgrounds);
