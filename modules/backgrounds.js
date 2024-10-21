@@ -1,6 +1,6 @@
 //This module contrtains all scene background images
 
-function preloadImages(backgrounds) {
+export function preloadImages(backgrounds) {
 	for(let i = 0; i < backgrounds.length; i++) {
 		const img = new Image;
 		img.src = backgrounds[i]
